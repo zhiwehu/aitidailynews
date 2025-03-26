@@ -69,6 +69,12 @@ const PosterGenerator = () => {
         const applyPseudoElementStyles = (element) => {
           const allElements = element.querySelectorAll('*');
           
+          // 首先移除所有poster-title的边框，避免重复线条
+          const titleElements = element.querySelectorAll('.poster-title');
+          titleElements.forEach(titleEl => {
+            titleEl.style.borderBottom = 'none';
+          });
+          
           allElements.forEach(el => {
             const style = window.getComputedStyle(el);
             const beforeStyles = window.getComputedStyle(el, '::before');

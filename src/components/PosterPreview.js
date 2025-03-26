@@ -303,6 +303,11 @@ const PosterContainer = styled.div`
     -moz-osx-font-smoothing: grayscale;
   }
   
+  /* Fix for double borders during export */
+  &.export-mode .poster-title {
+    border-bottom: none !important;
+  }
+  
   @media (max-width: 768px) {
     width: 100%;
     max-width: 330px;
