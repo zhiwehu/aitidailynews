@@ -76,6 +76,25 @@ const NewsItem = styled.div`
   position: relative;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+  overflow: visible;
+  
+  // 确保伪元素在正确位置
+  & > .news-item-before,
+  & > .news-item-after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
 `;
 
 const NewsTitle = styled.h3`
@@ -160,7 +179,7 @@ const Divider = styled.hr`
 
 // Helper function to create CSS for pseudo elements
 const createPseudoStyles = (styles) => {
-  if (!styles) return {};
+  if (!styles) return { pseudoStyles: {}, normalStyles: {} };
   
   // Extract pseudo-element styles
   const pseudoStyles = {};
@@ -175,6 +194,22 @@ const createPseudoStyles = (styles) => {
   });
   
   return { pseudoStyles, normalStyles };
+};
+
+// 确保SVG背景图案正确转换为CSS背景属性
+const ensureProperBackgroundRendering = (style) => {
+  // 处理背景以确保SVG正确渲染
+  if (style && style.backgroundImage && style.backgroundImage.includes('data:image/svg+xml')) {
+    return {
+      ...style,
+      backgroundRepeat: style.backgroundRepeat || 'repeat',
+      backgroundSize: style.backgroundSize || 'auto',
+      backgroundPosition: style.backgroundPosition || 'center',
+      imageRendering: 'high-quality'
+    };
+  }
+  
+  return style;
 };
 
 const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, onExport }, ref) => {
@@ -193,6 +228,9 @@ const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, 
   
   // Extract pseudo-element styles
   const { pseudoStyles, normalStyles } = createPseudoStyles(containerStyle);
+  
+  // 确保应用正确的背景渲染
+  const enhancedNormalStyles = ensureProperBackgroundRendering(normalStyles);
   
   // 生成海报文件名（包含模板名称）
   const generatePosterFilename = () => {
@@ -223,8 +261,12 @@ const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, 
           left: pseudoStyles['&::before'].left || 0,
           width: pseudoStyles['&::before'].width || '100%',
           height: pseudoStyles['&::before'].height || '100%',
-          zIndex: 0
-        }} />
+          zIndex: 0,
+          backgroundRepeat: pseudoStyles['&::before'].backgroundRepeat || 'repeat',
+          backgroundSize: pseudoStyles['&::before'].backgroundSize || 'auto',
+          backgroundPosition: pseudoStyles['&::before'].backgroundPosition || 'center',
+          imageRendering: 'high-quality'
+        }} className="pseudo-before" />
       );
     }
     
@@ -238,8 +280,12 @@ const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, 
           left: pseudoStyles['&::after'].left || 0,
           width: pseudoStyles['&::after'].width || '100%',
           height: pseudoStyles['&::after'].height || '100%',
-          zIndex: 0
-        }} />
+          zIndex: 0,
+          backgroundRepeat: pseudoStyles['&::after'].backgroundRepeat || 'repeat',
+          backgroundSize: pseudoStyles['&::after'].backgroundSize || 'auto',
+          backgroundPosition: pseudoStyles['&::after'].backgroundPosition || 'center',
+          imageRendering: 'high-quality'
+        }} className="pseudo-after" />
       );
     }
     
@@ -250,14 +296,18 @@ const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, 
     <PosterContainer 
       ref={ref}
       style={{
-        ...normalStyles,
-        // 清除背景相关的所有样式，确保每次切换时完全重置
+        ...enhancedNormalStyles,
+        // 确保背景完全应用，防止不一致
         backgroundColor: template.backgroundColor,
         backgroundImage: template.backgroundImage ? `url(${template.backgroundImage})` : 'none',
-        background: normalStyles.background
+        backgroundRepeat: enhancedNormalStyles.backgroundRepeat || 'repeat',
+        backgroundSize: enhancedNormalStyles.backgroundSize || 'auto',
+        backgroundPosition: enhancedNormalStyles.backgroundPosition || 'center',
+        background: enhancedNormalStyles.background
       }}
       data-template={template.id}
       key={templateId} // 添加key确保组件在模板变化时完全重新渲染
+      className={`template-${template.id}`}
     >
       {renderBackgroundElements()}
       
@@ -298,16 +348,34 @@ const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, 
                     ...itemPseudoStyles['&::before'],
                     content: '""',
                     position: 'absolute',
-                    zIndex: 0
-                  }} />
+                    zIndex: 0,
+                    top: itemPseudoStyles['&::before'].top || 0,
+                    left: itemPseudoStyles['&::before'].left || 0,
+                    width: itemPseudoStyles['&::before'].width || '100%',
+                    height: itemPseudoStyles['&::before'].height || '100%',
+                    backgroundRepeat: itemPseudoStyles['&::before'].backgroundRepeat || 'repeat',
+                    backgroundSize: itemPseudoStyles['&::before'].backgroundSize || 'auto',
+                    backgroundPosition: itemPseudoStyles['&::before'].backgroundPosition || 'center',
+                    opacity: itemPseudoStyles['&::before'].opacity || 1,
+                    pointerEvents: 'none'
+                  }} className="news-item-before" />
                 )}
                 {itemPseudoStyles['&::after'] && (
                   <div style={{
                     ...itemPseudoStyles['&::after'],
                     content: '""',
                     position: 'absolute',
-                    zIndex: 0
-                  }} />
+                    zIndex: 0,
+                    top: itemPseudoStyles['&::after'].top || 0,
+                    left: itemPseudoStyles['&::after'].left || 0,
+                    width: itemPseudoStyles['&::after'].width || '100%',
+                    height: itemPseudoStyles['&::after'].height || '100%',
+                    backgroundRepeat: itemPseudoStyles['&::after'].backgroundRepeat || 'repeat',
+                    backgroundSize: itemPseudoStyles['&::after'].backgroundSize || 'auto',
+                    backgroundPosition: itemPseudoStyles['&::after'].backgroundPosition || 'center',
+                    opacity: itemPseudoStyles['&::after'].opacity || 1,
+                    pointerEvents: 'none'
+                  }} className="news-item-after" />
                 )}
                 <NewsTitle 
                   style={newsTitleStyle} 

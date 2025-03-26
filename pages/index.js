@@ -196,34 +196,38 @@ const PreviewSection = styled.div`
 
 const PreviewContainer = styled.div`
   width: 100%;
+  height: auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  position: relative;
-  margin-top: 10px;
-  overflow: visible;
+  justify-content: flex-start;
+  border-radius: 10px;
   
-  &::after {
-    content: '';
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background-image: radial-gradient(circle, rgba(79, 70, 229, 0.03) 1px, transparent 1px);
-    background-size: 10px 10px;
-    bottom: -30px;
-    right: -30px;
-    border-radius: 50%;
-    opacity: 0.5;
-    z-index: -1;
+  /* 确保预览容器有足够的空间和固定的宽度 */
+  min-height: 667px;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 10px;
+  
+  /* 添加过渡效果使样式变化平滑 */
+  transition: all 0.3s ease;
+  
+  /* 确保子元素不会溢出容器 */
+  & > div {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  /* 提高预览质量 */
+  & * {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   @media (max-width: 768px) {
-    &::after {
-      width: 100px;
-      height: 100px;
-      bottom: -20px;
-      right: -20px;
-    }
+    max-width: 340px;
   }
 `;
 
@@ -355,18 +359,134 @@ export default function Home() {
         // Show loading state
         setGenerating(true);
         
+        // 先将所有伪元素样式应用到真实DOM上，以确保图片生成包含这些效果
+        const applyPseudoElementStyles = (element) => {
+          const allElements = element.querySelectorAll('*');
+          
+          allElements.forEach(el => {
+            const style = window.getComputedStyle(el);
+            const beforeStyles = window.getComputedStyle(el, '::before');
+            const afterStyles = window.getComputedStyle(el, '::after');
+            
+            // 处理背景渲染一致性问题
+            if (style.backgroundImage && style.backgroundImage.includes('data:image/svg+xml')) {
+              // 添加一个重叠层确保SVG被正确渲染
+              const bgDiv = document.createElement('div');
+              bgDiv.style.position = 'absolute';
+              bgDiv.style.inset = '0';
+              bgDiv.style.backgroundImage = style.backgroundImage;
+              bgDiv.style.backgroundSize = style.backgroundSize || 'auto';
+              bgDiv.style.backgroundPosition = style.backgroundPosition || 'center';
+              bgDiv.style.backgroundRepeat = style.backgroundRepeat || 'repeat';
+              bgDiv.style.zIndex = '0';
+              bgDiv.className = 'bg-reinforcement';
+              el.insertBefore(bgDiv, el.firstChild);
+            }
+            
+            // 检查伪元素是否有内容
+            if (beforeStyles.content !== 'none' && beforeStyles.content !== '') {
+              const beforeEl = document.createElement('div');
+              beforeEl.style.position = 'absolute';
+              beforeEl.style.top = beforeStyles.top || '0';
+              beforeEl.style.left = beforeStyles.left || '0';
+              beforeEl.style.width = beforeStyles.width || '100%';
+              beforeEl.style.height = beforeStyles.height || '100%';
+              beforeEl.style.zIndex = '0';
+              beforeEl.style.background = beforeStyles.background || 'none';
+              beforeEl.style.backgroundImage = beforeStyles.backgroundImage || 'none';
+              beforeEl.style.backgroundSize = beforeStyles.backgroundSize || 'auto';
+              beforeEl.style.backgroundPosition = beforeStyles.backgroundPosition || 'center';
+              beforeEl.style.backgroundRepeat = beforeStyles.backgroundRepeat || 'repeat';
+              beforeEl.style.borderRadius = beforeStyles.borderRadius || '0';
+              beforeEl.style.boxShadow = beforeStyles.boxShadow || 'none';
+              beforeEl.style.opacity = beforeStyles.opacity || '1';
+              beforeEl.className = 'pseudo-before';
+              el.appendChild(beforeEl);
+            }
+            
+            if (afterStyles.content !== 'none' && afterStyles.content !== '') {
+              const afterEl = document.createElement('div');
+              afterEl.style.position = 'absolute';
+              afterEl.style.top = afterStyles.top || '0';
+              afterEl.style.left = afterStyles.left || '0';
+              afterEl.style.width = afterStyles.width || '100%';
+              afterEl.style.height = afterStyles.height || '100%';
+              afterEl.style.zIndex = '0';
+              afterEl.style.background = afterStyles.background || 'none';
+              afterEl.style.backgroundImage = afterStyles.backgroundImage || 'none';
+              afterEl.style.backgroundSize = afterStyles.backgroundSize || 'auto';
+              afterEl.style.backgroundPosition = afterStyles.backgroundPosition || 'center';
+              afterEl.style.backgroundRepeat = afterStyles.backgroundRepeat || 'repeat';
+              afterEl.style.borderRadius = afterStyles.borderRadius || '0';
+              afterEl.style.boxShadow = afterStyles.boxShadow || 'none';
+              afterEl.style.opacity = afterStyles.opacity || '1';
+              afterEl.className = 'pseudo-after';
+              el.appendChild(afterEl);
+            }
+          });
+        };
+        
+        // 确保所有图像都已加载完成
+        const waitForImagesLoaded = async (element) => {
+          const images = element.querySelectorAll('img');
+          const promises = Array.from(images).map(img => {
+            if (img.complete) return Promise.resolve();
+            return new Promise(resolve => {
+              img.onload = resolve;
+              img.onerror = resolve; // 即使错误也继续
+            });
+          });
+          
+          return Promise.all(promises);
+        };
+        
+        // 等待所有样式和SVG加载完成
+        await waitForImagesLoaded(posterRef.current);
+        
         const canvas = await html2canvas(posterRef.current, {
-          scale: 2,
-          useCORS: true,
+          scale: 3,                // 提高清晰度
+          useCORS: true,           // 允许跨域图片
           allowTaint: true,
-          backgroundColor: '#ffffff',
+          backgroundColor: null,   // 使用透明背景，避免背景色覆盖
+          logging: true,           // 开启日志便于调试
           height: posterRef.current.offsetHeight,
           windowHeight: posterRef.current.offsetHeight,
-          onclone: (document, element) => {
-            // Ensure the cloned element has proper height and positioning
+          onclone: async (document, element) => {
+            // 确保克隆元素有正确的高度和位置
             element.style.height = `${posterRef.current.offsetHeight}px`;
             element.style.position = 'relative';
             element.style.transform = 'none';
+            element.style.visibility = 'visible';
+            element.style.opacity = '1';
+            
+            // 将伪元素的样式转换为真实DOM元素
+            applyPseudoElementStyles(element);
+            
+            // 等待添加的DOM元素渲染完成
+            await new Promise(resolve => setTimeout(resolve, 100));
+            
+            // 先隐藏项目中可能干扰渲染的元素
+            const pageElements = document.querySelectorAll('body > *:not(#poster-container-clone)');
+            pageElements.forEach(el => {
+              if (el !== element && !element.contains(el)) {
+                el.style.display = 'none';
+              }
+            });
+            
+            // 添加克隆后的元素到body以确保完整渲染
+            const container = document.createElement('div');
+            container.id = 'poster-container-clone';
+            container.style.position = 'fixed';
+            container.style.top = '0';
+            container.style.left = '0';
+            container.style.width = '100%';
+            container.style.height = '100%';
+            container.style.zIndex = '9999';
+            container.appendChild(element);
+            document.body.appendChild(container);
+            
+            // 等待渲染完成
+            await new Promise(resolve => setTimeout(resolve, 200));
           }
         });
         
