@@ -153,8 +153,26 @@ const applyTemplateTitleStyles = (template) => {
     marginBottom: '10px'
   };
   
+  // 为精致蓝金模板应用特殊的主标题样式
+  if (template.id === 'classic') {
+    styles = {
+      ...styles,
+      color: template.accentColor, // 使用强调色 #f59e0b
+      textShadow: `0 0 10px ${template.accentColor}50, 0 2px 4px rgba(0, 0, 0, 0.8)`,
+      fontWeight: '700'
+    };
+  }
+  // 为暗黑科技模板应用特殊的主标题样式
+  else if (template.id === 'dark') {
+    styles = {
+      ...styles,
+      color: template.accentColor, // 使用强调色 #10b981 (绿色)
+      textShadow: `0 0 15px ${template.accentColor}70, 0 2px 4px rgba(0, 0, 0, 0.8)`,
+      fontWeight: '700'
+    };
+  }
   // 为深色背景的模板增强标题可见度
-  if (template.backgroundColor && template.backgroundColor.includes('linear-gradient') && 
+  else if (template.backgroundColor && template.backgroundColor.includes('linear-gradient') && 
       (template.backgroundColor.includes('#0') || 
        template.backgroundColor.includes('#1') || 
        template.backgroundColor.includes('#2') || 
@@ -256,8 +274,38 @@ const applyTemplateNewsTitleStyles = (template) => {
     position: 'relative'
   };
   
+  // 为精致蓝金模板应用特殊的新闻标题样式
+  if (template.id === 'classic') {
+    styles = {
+      ...styles,
+      color: template.accentColor, // 使用强调色 #f59e0b
+      fontSize: '17px',
+      fontWeight: '600',
+      textShadow: `0 0 5px ${template.accentColor}40, 0 1px 2px rgba(0, 0, 0, 0.6)`
+    };
+  }
+  // 为现代简约模板应用特殊的新闻标题样式
+  else if (template.id === 'modern') {
+    styles = {
+      ...styles,
+      color: template.accentColor, // 使用强调色 #06b6d4 (青色)
+      fontSize: '17px',
+      fontWeight: '600',
+      textShadow: `0 0 8px ${template.accentColor}50, 0 1px 2px rgba(0, 0, 0, 0.6)`
+    };
+  }
+  // 为暗黑科技模板应用特殊的新闻标题样式
+  else if (template.id === 'dark') {
+    styles = {
+      ...styles,
+      color: template.accentColor, // 使用强调色 #10b981 (绿色)
+      fontSize: '17px',
+      fontWeight: '600',
+      textShadow: `0 0 8px ${template.accentColor}70, 0 1px 2px rgba(0, 0, 0, 0.8)`
+    };
+  }
   // 深色背景下的新闻标题增强
-  if (template.backgroundColor && template.backgroundColor.includes('linear-gradient') && 
+  else if (template.backgroundColor && template.backgroundColor.includes('linear-gradient') && 
       (template.backgroundColor.includes('#0') || 
        template.backgroundColor.includes('#1') || 
        template.backgroundColor.includes('#2') || 

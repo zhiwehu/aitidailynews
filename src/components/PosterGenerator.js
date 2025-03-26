@@ -261,24 +261,190 @@ const PosterGenerator = () => {
             
             // 特别增强所有文本元素的可见度
             const allTextElements = element.querySelectorAll('.poster-title, .news-title, .news-content');
-            allTextElements.forEach(textEl => {
-              textEl.style.color = '#ffffff'; // 确保文字是白色
-              textEl.style.textShadow = '0 1px 3px rgba(0, 0, 0, 0.9)'; // 增强文字阴影
-              textEl.style.fontWeight = textEl.classList.contains('poster-title') ? '700' : 
-                                        textEl.classList.contains('news-title') ? '600' : '500'; // 加粗文字
-            });
             
-            // 特别处理新闻项目在黑色背景上的显示
-            const newsItems = element.querySelectorAll('.news-item');
-            if (currentTemplate && (currentTemplate.id === 'techGeek' || currentTemplate.id === 'dark' || 
-                                   currentTemplate.id === 'modern' || currentTemplate.id === 'futuristic')) {
-              // 为黑色背景模板增强新闻项样式
+            // 根据模板类型应用不同的文本样式
+            if (currentTemplate && currentTemplate.id === 'dark') {
+              // 暗黑科技模板使用绿色文字
+              allTextElements.forEach(textEl => {
+                textEl.style.color = '#10b981'; // 绿色文字
+                textEl.style.textShadow = '0 0 10px rgba(16, 185, 129, 0.5)'; // 绿色辉光
+                textEl.style.fontWeight = textEl.classList.contains('poster-title') ? '700' : 
+                                         textEl.classList.contains('news-title') ? '600' : '500'; // 加粗文字
+              });
+            } else if (currentTemplate && currentTemplate.id === 'techGeek') {
+              // 科技极客模板样式处理
+              // 特别处理文本颜色和样式
+              allTextElements.forEach(textEl => {
+                if (textEl.classList.contains('poster-title')) {
+                  textEl.style.color = '#ffffff'; // 白色标题
+                  textEl.style.textShadow = '0 0 15px rgba(6, 182, 212, 0.7)'; // 青色辉光
+                  textEl.style.borderBottom = '2px solid rgba(6, 182, 212, 0.6)'; // 青色底边
+                  textEl.style.paddingBottom = '10px';
+                  textEl.style.fontWeight = '700';
+                } else if (textEl.classList.contains('news-title')) {
+                  textEl.style.color = '#06b6d4'; // 青色新闻标题
+                  textEl.style.textShadow = '0 0 8px rgba(6, 182, 212, 0.5)'; // 青色辉光
+                  textEl.style.fontWeight = '600';
+                } else {
+                  textEl.style.color = '#ffffff'; // 白色内容
+                  textEl.style.textShadow = '0 1px 2px rgba(0, 0, 0, 0.8)'; // 增强阴影
+                  textEl.style.fontWeight = '400';
+                }
+              });
+            } else if (currentTemplate && currentTemplate.id === 'futuristic') {
+              // 未来科幻模板样式处理
+              allTextElements.forEach(textEl => {
+                if (textEl.classList.contains('poster-title')) {
+                  textEl.style.color = '#ffffff'; // 白色标题
+                  textEl.style.textShadow = '0 0 15px rgba(168, 85, 247, 0.7)'; // 紫色辉光
+                  textEl.style.borderBottom = '2px solid rgba(168, 85, 247, 0.6)'; // 紫色底边
+                  textEl.style.paddingBottom = '10px';
+                  textEl.style.fontWeight = '700';
+                } else if (textEl.classList.contains('news-title')) {
+                  textEl.style.color = '#a855f7'; // 紫色新闻标题
+                  textEl.style.textShadow = '0 0 8px rgba(168, 85, 247, 0.5)'; // 紫色辉光
+                  textEl.style.fontWeight = '600';
+                } else {
+                  textEl.style.color = '#ffffff'; // 白色内容
+                  textEl.style.textShadow = '0 1px 2px rgba(0, 0, 0, 0.8)'; // 增强阴影
+                  textEl.style.fontWeight = '400';
+                }
+              });
+            } else if (currentTemplate && currentTemplate.id === 'modern') {
+              // 现代简约模板样式
               newsItems.forEach(item => {
-                item.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                item.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
                 item.style.backdropFilter = 'blur(3px)';
                 item.style.borderRadius = '8px';
                 item.style.padding = '12px';
-                item.style.border = `1px solid ${currentTemplate.accentColor}30`;
+                item.style.border = '1px solid rgba(6, 182, 212, 0.3)';
+                item.style.boxShadow = '0 0 10px rgba(6, 182, 212, 0.15)';
+                item.style.position = 'relative';
+                
+                // 添加顶部渐变线条
+                const gradientLine = document.createElement('div');
+                gradientLine.style.position = 'absolute';
+                gradientLine.style.top = '0';
+                gradientLine.style.left = '0';
+                gradientLine.style.width = '100%';
+                gradientLine.style.height = '3px';
+                gradientLine.style.background = 'linear-gradient(90deg, transparent, #06b6d4, transparent)';
+                gradientLine.style.opacity = '0.7';
+                gradientLine.style.pointerEvents = 'none';
+                
+                // 确保在内容前面插入
+                if (item.firstChild) {
+                  item.insertBefore(gradientLine, item.firstChild);
+                } else {
+                  item.appendChild(gradientLine);
+                }
+              });
+              
+              // 为现代简约模板专门调整文本样式
+              allTextElements.forEach(textEl => {
+                if (textEl.classList.contains('poster-title')) {
+                  textEl.style.color = '#ffffff';
+                  textEl.style.textShadow = '0 0 10px rgba(6, 182, 212, 0.5)';
+                  textEl.style.borderBottom = '2px solid rgba(6, 182, 212, 0.4)';
+                  textEl.style.paddingBottom = '8px';
+                  textEl.style.fontWeight = '600';
+                } else if (textEl.classList.contains('news-title')) {
+                  textEl.style.color = '#06b6d4';
+                  textEl.style.textShadow = '0 0 5px rgba(6, 182, 212, 0.4)';
+                  textEl.style.fontWeight = '600';
+                } else if (textEl.classList.contains('news-content')) {
+                  textEl.style.color = '#e2e8f0';
+                  textEl.style.textShadow = '0 1px 1px rgba(0, 0, 0, 0.6)';
+                }
+              });
+            } else {
+              // 其他模板使用白色文字
+              allTextElements.forEach(textEl => {
+                textEl.style.color = '#ffffff'; // 确保文字是白色
+                textEl.style.textShadow = '0 1px 3px rgba(0, 0, 0, 0.9)'; // 增强文字阴影
+                textEl.style.fontWeight = textEl.classList.contains('poster-title') ? '700' : 
+                                         textEl.classList.contains('news-title') ? '600' : '500'; // 加粗文字
+              });
+            }
+            
+            // 特别处理新闻项目在黑色背景上的显示
+            const newsItems = element.querySelectorAll('.news-item');
+            if (currentTemplate && currentTemplate.id === 'dark') {
+              // 暗黑科技模板使用绿色边框和阴影
+              newsItems.forEach(item => {
+                item.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // 更深的背景色
+                item.style.backdropFilter = 'blur(3px)';
+                item.style.borderRadius = '8px';
+                item.style.padding = '12px';
+                item.style.border = '1px solid rgba(16, 185, 129, 0.4)'; // 半透明绿色边框
+                item.style.boxShadow = '0 0 10px rgba(16, 185, 129, 0.3)'; // 绿色阴影效果
+              });
+            } else if (currentTemplate && currentTemplate.id === 'techGeek') {
+              // 科技极客模板专属样式
+              newsItems.forEach(item => {
+                item.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                item.style.backdropFilter = 'blur(2px)';
+                item.style.borderRadius = '8px';
+                item.style.padding = '12px';
+                item.style.border = '1px solid rgba(6, 182, 212, 0.5)'; // 青色边框
+                item.style.boxShadow = '0 0 15px rgba(6, 182, 212, 0.3)'; // 青色阴影
+              });
+            } else if (currentTemplate && currentTemplate.id === 'futuristic') {
+              // 未来科幻模板专属样式
+              newsItems.forEach(item => {
+                item.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                item.style.backdropFilter = 'blur(2px)';
+                item.style.borderRadius = '8px';
+                item.style.padding = '12px';
+                item.style.border = '1px solid rgba(168, 85, 247, 0.5)'; // 紫色边框
+                item.style.boxShadow = '0 0 15px rgba(168, 85, 247, 0.3)'; // 紫色阴影
+                
+                // 创建全息效果层
+                const holoEffect = document.createElement('div');
+                holoEffect.style.position = 'absolute';
+                holoEffect.style.top = '0';
+                holoEffect.style.left = '0';
+                holoEffect.style.width = '100%';
+                holoEffect.style.height = '100%';
+                holoEffect.style.background = 'linear-gradient(45deg, rgba(168, 85, 247, 0) 0%, rgba(168, 85, 247, 0.1) 50%, rgba(168, 85, 247, 0) 100%)';
+                holoEffect.style.pointerEvents = 'none';
+                holoEffect.style.zIndex = '1';
+                
+                // 确保在内容前面插入
+                if (item.firstChild) {
+                  item.insertBefore(holoEffect, item.firstChild);
+                } else {
+                  item.appendChild(holoEffect);
+                }
+              });
+            } else if (currentTemplate && currentTemplate.id === 'modern') {
+              // 现代简约模板样式
+              newsItems.forEach(item => {
+                item.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                item.style.backdropFilter = 'blur(3px)';
+                item.style.borderRadius = '8px';
+                item.style.padding = '12px';
+                item.style.border = '1px solid rgba(6, 182, 212, 0.3)';
+                item.style.boxShadow = '0 0 10px rgba(6, 182, 212, 0.15)';
+                item.style.position = 'relative';
+                
+                // 添加顶部渐变线条
+                const gradientLine = document.createElement('div');
+                gradientLine.style.position = 'absolute';
+                gradientLine.style.top = '0';
+                gradientLine.style.left = '0';
+                gradientLine.style.width = '100%';
+                gradientLine.style.height = '3px';
+                gradientLine.style.background = 'linear-gradient(90deg, transparent, #06b6d4, transparent)';
+                gradientLine.style.opacity = '0.7';
+                gradientLine.style.pointerEvents = 'none';
+                
+                // 确保在内容前面插入
+                if (item.firstChild) {
+                  item.insertBefore(gradientLine, item.firstChild);
+                } else {
+                  item.appendChild(gradientLine);
+                }
               });
             }
             
@@ -334,6 +500,48 @@ const PosterGenerator = () => {
               if (currentTemplate.id === 'elegant') {
                 // 优雅格调模板使用特定的渐变背景
                 container.style.background = 'linear-gradient(to right, #1e1b4b 0%, #312e81 100%)';
+              } else if (currentTemplate.id === 'futuristic') {
+                // 未来科幻模板使用深紫色渐变背景
+                container.style.background = 'linear-gradient(135deg, #0f0720 0%, #1e0942 50%, #3b0764 100%)';
+                
+                // 添加辐射渐变光晕效果
+                const glowEffect = document.createElement('div');
+                glowEffect.style.position = 'absolute';
+                glowEffect.style.inset = '0';
+                glowEffect.style.background = 'radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.15), transparent 70%)';
+                glowEffect.style.pointerEvents = 'none';
+                glowEffect.style.zIndex = '0';
+                container.appendChild(glowEffect);
+              } else if (currentTemplate.id === 'techGeek') {
+                // 科技极客模板使用深蓝色渐变背景
+                container.style.background = 'linear-gradient(135deg, #0a192f 0%, #112240 50%, #1a365d 100%)';
+                
+                // 添加网格线效果
+                const gridEffect = document.createElement('div');
+                gridEffect.style.position = 'absolute';
+                gridEffect.style.inset = '0';
+                gridEffect.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%2306b6d4' fill-opacity='0.3' d='M0 0h100v1H0zM0 20h100v1H0zM0 40h100v1H0zM0 60h100v1H0zM0 80h100v1H0zM1 0v100h1V0zM21 0v100h1V0zM41 0v100h1V0zM61 0v100h1V0zM81 0v100h1V0z'/%3E%3C/svg%3E\")";
+                gridEffect.style.backgroundSize = '100px 100px';
+                gridEffect.style.backgroundPosition = 'center';
+                gridEffect.style.backgroundRepeat = 'repeat';
+                gridEffect.style.pointerEvents = 'none';
+                gridEffect.style.zIndex = '0';
+                container.appendChild(gridEffect);
+              } else if (currentTemplate.id === 'modern') {
+                // 现代简约模板使用青色调深色渐变背景
+                container.style.background = 'linear-gradient(135deg, #042f2e 0%, #134e4a 50%, #0f766e 100%)';
+                
+                // 添加点状图案
+                const dotPattern = document.createElement('div');
+                dotPattern.style.position = 'absolute';
+                dotPattern.style.inset = '0';
+                dotPattern.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2306b6d4' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E\")";
+                dotPattern.style.backgroundSize = '20px 20px';
+                dotPattern.style.backgroundPosition = 'center';
+                dotPattern.style.backgroundRepeat = 'repeat';
+                dotPattern.style.pointerEvents = 'none';
+                dotPattern.style.zIndex = '0';
+                container.appendChild(dotPattern);
               } else if (currentTemplate.backgroundColor) {
                 if (currentTemplate.backgroundColor.includes('linear-gradient')) {
                   container.style.background = currentTemplate.backgroundColor;

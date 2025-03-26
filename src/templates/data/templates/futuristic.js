@@ -1,1 +1,25 @@
-const futuristic = { id: "futuristic", name: "未来科幻", backgroundColor: "#000000", textColor: "#ffffff", accentColor: "#a855f7", titleFont: "\"Noto Sans SC\", sans-serif", contentFont: "\"Noto Sans SC\", sans-serif", logoPosition: "top-right", qrPosition: "bottom-right", newsItemStyle: "holographic", holographicEffect: true, laserGrid: true, digitalRain: true, neonOutlines: true, improvedContrast: true, textShadow: true, highContrast: true, neonGlow: true, titleGlow: true, backgroundImage: "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"%3E%3Cpath fill=\"%23a855f7\" fill-opacity=\"0.25\" d=\"M0 0h1v1H0zM12 0h1v1h-1zM24 0h1v1h-1zM36 0h1v1h-1zM48 0h1v1h-1zM60 0h1v1h-1zM72 0h1v1h-1zM84 0h1v1h-1zM96 0h1v1h-1zM0 12h1v1H0zM12 12h1v1h-1zM24 12h1v1h-1zM36 12h1v1h-1zM48 12h1v1h-1zM60 12h1v1h-1zM72 12h1v1h-1zM84 12h1v1h-1zM96 12h1v1h-1zM0 24h1v1H0zM12 24h1v1h-1zM24 24h1v1h-1zM36 24h1v1h-1zM48 24h1v1h-1zM60 24h1v1h-1zM72 24h1v1h-1zM84 24h1v1h-1zM96 24h1v1h-1zM0 36h1v1H0zM12 36h1v1h-1zM24 36h1v1h-1zM36 36h1v1h-1zM48 36h1v1h-1zM60 36h1v1h-1zM72 36h1v1h-1zM84 36h1v1h-1zM96 36h1v1h-1zM0 48h1v1H0zM12 48h1v1h-1zM24 48h1v1h-1zM36 48h1v1h-1zM48 48h1v1h-1zM60 48h1v1h-1zM72 48h1v1h-1zM84 48h1v1h-1zM96 48h1v1h-1zM0 60h1v1H0zM12 60h1v1h-1zM24 60h1v1h-1zM36 60h1v1h-1zM48 60h1v1h-1zM60 60h1v1h-1zM72 60h1v1h-1zM84 60h1v1h-1zM96 60h1v1h-1zM0 72h1v1H0zM12 72h1v1h-1zM24 72h1v1h-1zM36 72h1v1h-1zM48 72h1v1h-1zM60 72h1v1h-1zM72 72h1v1h-1zM84 72h1v1h-1zM96 72h1v1h-1zM0 84h1v1H0zM12 84h1v1h-1zM24 84h1v1h-1zM36 84h1v1h-1zM48 84h1v1h-1zM60 84h1v1h-1zM72 84h1v1h-1zM84 84h1v1h-1zM96 84h1v1h-1zM0 96h1v1H0zM12 96h1v1h-1zM24 96h1v1h-1zM36 96h1v1h-1zM48 96h1v1h-1zM60 96h1v1h-1zM72 96h1v1h-1zM84 96h1v1h-1zM96 96h1v1h-1z\"/%3E%3C/svg%3E" }; module.exports = futuristic;
+// Future Sci-Fi template - 未来科幻
+const futuristic = {
+  id: "futuristic",
+  name: "未来科幻",
+  backgroundColor: "linear-gradient(135deg, #0f0720 0%, #1e0942 50%, #3b0764 100%)",
+  textColor: "#ffffff",
+  accentColor: "#a855f7",
+  titleFont: "\"Noto Sans SC\", sans-serif",
+  contentFont: "\"Noto Sans SC\", sans-serif",
+  logoPosition: "top-right",
+  qrPosition: "bottom-right",
+  newsItemStyle: "holographic",
+  holographicEffect: true,
+  laserGrid: true,
+  digitalRain: true,
+  neonOutlines: true,
+  improvedContrast: true,
+  textShadow: true,
+  highContrast: true,
+  neonGlow: true,
+  titleGlow: true,
+  backgroundImage: "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"80\" height=\"80\" viewBox=\"0 0 80 80\"%3E%3Cg fill=\"%23a855f7\" fill-opacity=\"0.4\"%3E%3Cpath d=\"M0 0h1v1H0zM10 0h1v1h-1zM20 0h1v1h-1zM30 0h1v1h-1zM40 0h1v1h-1zM50 0h1v1h-1zM60 0h1v1h-1zM70 0h1v1h-1zM0 10h1v1H0zM10 10h1v1h-1zM20 10h1v1h-1zM30 10h1v1h-1zM40 10h1v1h-1zM50 10h1v1h-1zM60 10h1v1h-1zM70 10h1v1h-1zM0 20h1v1H0zM10 20h1v1h-1zM20 20h1v1h-1zM30 20h1v1h-1zM40 20h1v1h-1zM50 20h1v1h-1zM60 20h1v1h-1zM70 20h1v1h-1zM0 30h1v1H0zM10 30h1v1h-1zM20 30h1v1h-1zM30 30h1v1h-1zM40 30h1v1h-1zM50 30h1v1h-1zM60 30h1v1h-1zM70 30h1v1h-1zM0 40h1v1H0zM10 40h1v1h-1zM20 40h1v1h-1zM30 40h1v1h-1zM40 40h1v1h-1zM50 40h1v1h-1zM60 40h1v1h-1zM70 40h1v1h-1zM0 50h1v1H0zM10 50h1v1h-1zM20 50h1v1h-1zM30 50h1v1h-1zM40 50h1v1h-1zM50 50h1v1h-1zM60 50h1v1h-1zM70 50h1v1h-1zM0 60h1v1H0zM10 60h1v1h-1zM20 60h1v1h-1zM30 60h1v1h-1zM40 60h1v1h-1zM50 60h1v1h-1zM60 60h1v1h-1zM70 60h1v1h-1zM0 70h1v1H0zM10 70h1v1h-1zM20 70h1v1h-1zM30 70h1v1h-1zM40 70h1v1h-1zM50 70h1v1h-1zM60 70h1v1h-1zM70 70h1v1h-1z\"%2F%3E%3Ccircle cx=\"15\" cy=\"15\" r=\"2\"%2F%3E%3Ccircle cx=\"40\" cy=\"40\" r=\"2\"%2F%3E%3Ccircle cx=\"65\" cy=\"65\" r=\"2\"%2F%3E%3Ccircle cx=\"25\" cy=\"55\" r=\"1.5\"%2F%3E%3Ccircle cx=\"55\" cy=\"25\" r=\"1.5\"%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+}; 
+
+module.exports = futuristic;

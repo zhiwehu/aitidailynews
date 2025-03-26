@@ -1,4 +1,5 @@
-import React, { forwardRef } from 'react';
+import QRCode from 'qrcode';
+import React, { forwardRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import {
   applyTemplateNewsContentStyles,
@@ -8,6 +9,15 @@ import {
   applyTemplateTitleStyles,
   getTemplateById
 } from '../templates';
+
+// 使用色块作为默认logo
+const DEFAULT_LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="50"><rect width="200" height="50" rx="5" fill="#3b82f6"/><text x="100" y="30" font-family="Arial" font-size="18" font-weight="bold" fill="white" text-anchor="middle">AITi LOGO</text></svg>`;
+
+// 将SVG转换为data URI
+const DEFAULT_LOGO = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(DEFAULT_LOGO_SVG)}`;
+
+// 默认二维码URL
+const DEFAULT_QR_CODE_URL = "https://getAITi.com";
 
 const PosterContainer = styled.div`
   width: 375px;
@@ -22,6 +32,29 @@ const PosterContainer = styled.div`
   overflow: visible;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background-color: ${props => props.$backgroundColor || '#000'};
+  background-image: ${props => props.$backgroundImage || 'none'};
+  background-size: cover;
+  background-position: center;
+  
+  @keyframes holographic {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
   
   // 为"优雅格调"模板添加深色渐变背景
   &.template-elegant {
@@ -58,6 +91,205 @@ const PosterContainer = styled.div`
     }
   }
   
+  &.template-dark {
+    .news-item {
+      border: 1px solid rgba(16, 185, 129, 0.4); // 半透明绿色边框
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3); // 绿色阴影效果
+    }
+    
+    .poster-title, .news-title {
+      color: #10b981 !important; // 强制使用绿色
+      text-shadow: 0 0 10px rgba(16, 185, 129, 0.5) !important; // 绿色辉光
+    }
+    
+    .news-content {
+      color: #10b981 !important; // 绿色字体
+    }
+  }
+  
+  &.template-techGeek {
+    background: linear-gradient(135deg, #0a192f 0%, #112240 50%, #1a365d 100%);
+    
+    // 添加网格线效果层
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%2306b6d4' fill-opacity='0.3' d='M0 0h100v1H0zM0 20h100v1H0zM0 40h100v1H0zM0 60h100v1H0zM0 80h100v1H0zM1 0v100h1V0zM21 0v100h1V0zM41 0v100h1V0zM61 0v100h1V0zM81 0v100h1V0z'/%3E%3C/svg%3E");
+      background-size: 100px 100px;
+      background-position: center;
+      background-repeat: repeat;
+      opacity: 1;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .news-item {
+      border: 1px solid rgba(6, 182, 212, 0.5); // 半透明青色边框
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.3); // 青色阴影效果
+      background-color: rgba(0, 0, 0, 0.7); // 深色背景
+      backdrop-filter: blur(2px);
+    }
+    
+    .poster-title {
+      color: #ffffff !important; // 纯白色标题
+      text-shadow: 0 0 15px rgba(6, 182, 212, 0.7) !important; // 青色辉光效果
+      border-bottom: 2px solid rgba(6, 182, 212, 0.6); // 青色底边
+      padding-bottom: 10px; // 底边距离
+    }
+    
+    .news-title {
+      color: #06b6d4 !important; // 青色标题
+      text-shadow: 0 0 8px rgba(6, 182, 212, 0.5) !important; // 青色辉光
+      font-weight: 600 !important;
+    }
+    
+    .news-content {
+      color: #ffffff !important; // 白色内容
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important; // 阴影增强可读性
+    }
+  }
+  
+  &.template-futuristic {
+    .news-item {
+      border: 1px solid rgba(168, 85, 247, 0.5); // 半透明紫色边框
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.3); // 紫色阴影效果
+      background-color: rgba(0, 0, 0, 0.7); // 深色背景
+      backdrop-filter: blur(2px);
+      position: relative;
+      overflow: hidden;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, 
+          rgba(168, 85, 247, 0) 0%, 
+          rgba(168, 85, 247, 0.15) 50%, 
+          rgba(168, 85, 247, 0) 100%);
+        animation: holographic 4s ease-in-out infinite;
+        pointer-events: none;
+      }
+    }
+    
+    .poster-title {
+      color: #ffffff !important; // 纯白色标题
+      text-shadow: 0 0 15px rgba(168, 85, 247, 0.7) !important; // 紫色辉光效果
+      border-bottom: 2px solid rgba(168, 85, 247, 0.6); // 紫色底边
+      padding-bottom: 10px; // 底边距离
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, 
+          rgba(168, 85, 247, 0.2),
+          rgba(168, 85, 247, 0.8),
+          rgba(168, 85, 247, 0.2));
+        animation: glow 2s ease-in-out infinite;
+      }
+    }
+    
+    .news-title {
+      color: #a855f7 !important; // 紫色标题
+      text-shadow: 0 0 8px rgba(168, 85, 247, 0.5) !important; // 紫色辉光
+      font-weight: 600 !important;
+    }
+    
+    .news-content {
+      color: #ffffff !important; // 白色内容
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important; // 阴影增强可读性
+    }
+    
+    // 额外添加背景增强效果
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%, 
+        rgba(168, 85, 247, 0.15), 
+        transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+  
+  &.template-modern {
+    background: linear-gradient(135deg, #042f2e 0%, #134e4a 50%, #0f766e 100%);
+    
+    // 添加点状图案背景
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2306b6d4' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 20px 20px;
+      background-position: center;
+      background-repeat: repeat;
+      opacity: 1;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .news-item {
+      border: 1px solid rgba(6, 182, 212, 0.3); // 半透明青色边框
+      box-shadow: 0 0 10px rgba(6, 182, 212, 0.15); // 青色阴影效果
+      background-color: rgba(0, 0, 0, 0.7); // 深色背景
+      backdrop-filter: blur(3px);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      
+      // 添加斜线装饰
+      position: relative;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #06b6d4, transparent);
+        opacity: 0.7;
+      }
+    }
+    
+    .poster-title {
+      color: #ffffff !important; // 纯白色标题
+      text-shadow: 0 0 10px rgba(6, 182, 212, 0.5) !important; // 青色辉光效果
+      border-bottom: 2px solid rgba(6, 182, 212, 0.4); // 青色底边
+      padding-bottom: 8px; // 底边距离
+      font-weight: 600 !important;
+    }
+    
+    .news-title {
+      color: #06b6d4 !important; // 青色标题
+      text-shadow: 0 0 5px rgba(6, 182, 212, 0.4) !important; // 青色辉光
+      font-weight: 600 !important;
+    }
+    
+    .news-content {
+      color: #e2e8f0 !important; // 浅灰白色内容
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6) !important; // 阴影增强可读性
+    }
+  }
+  
   & > * {
     position: relative;
     z-index: 1;
@@ -89,7 +321,7 @@ const LogoContainer = styled.div`
   z-index: 10;
 `;
 
-const LogoImage = styled.img`
+const LogoImage = styled.div`
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -281,6 +513,35 @@ const ensureProperBackgroundRendering = (style) => {
 
 const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, onExport }, ref) => {
   const template = getTemplateById(templateId);
+  const [generatedQRCode, setGeneratedQRCode] = useState('');
+  
+  // 生成QRCode
+  useEffect(() => {
+    if (!qrCode) {
+      QRCode.toDataURL(DEFAULT_QR_CODE_URL, {
+        width: 200,
+        margin: 2,
+        color: {
+          dark: '#000',
+          light: '#FFF'
+        }
+      })
+      .then(url => {
+        setGeneratedQRCode(url);
+      })
+      .catch(err => {
+        console.error('QR Code generation error:', err);
+        // 生成失败时使用之前的二维码
+        setGeneratedQRCode('/images/default-qrcode.svg');
+      });
+    }
+  }, [qrCode]);
+  
+  // 使用提供的logo或默认logo
+  const displayLogo = logo || DEFAULT_LOGO;
+  
+  // 使用提供的二维码或生成的二维码
+  const displayQrCode = qrCode || generatedQRCode || '/images/default-qrcode.svg';
   
   const formattedDate = new Intl.DateTimeFormat('zh-CN', {
     year: 'numeric',
@@ -378,7 +639,10 @@ const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, 
         backgroundRepeat: enhancedNormalStyles.backgroundRepeat || 'repeat',
         backgroundSize: enhancedNormalStyles.backgroundSize || 'auto',
         backgroundPosition: enhancedNormalStyles.backgroundPosition || 'center',
-        background: template.id !== 'elegant' ? template.backgroundColor : 'none', // 仅为非优雅模板设置背景色
+        // 为优雅模板设置正确的背景色
+        background: template.id === 'elegant' 
+          ? 'linear-gradient(to right, #1e1b4b 0%, #312e81 100%)' 
+          : template.backgroundColor,
       }}
       data-template={template.id}
       key={templateId} // 添加key确保组件在模板变化时完全重新渲染
@@ -386,22 +650,33 @@ const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, 
     >
       {renderBackgroundElements()}
       
-      {logo && (
-        <LogoContainer $position={template.logoPosition || 'top-left'}>
-          <LogoImage src={logo} alt="Logo" />
-        </LogoContainer>
-      )}
+      {/* Logo section */}
+      <LogoContainer $position={template.logoPosition || 'top-left'}>
+        <LogoImage>
+          {typeof displayLogo === 'string' ? (
+            <img src={displayLogo} alt="Logo" />
+          ) : (
+            displayLogo
+          )}
+        </LogoImage>
+      </LogoContainer>
       
       <PosterTitle 
         style={{
           ...titleStyle,
-          color: '#ffffff', // 确保标题文字为白色
-          textShadow: '0 2px 4px rgba(0, 0, 0, 0.9)', // 增强阴影
+          // 根据模板ID设置标题颜色
+          color: template.id === 'classic' ? template.accentColor : 
+                 template.id === 'dark' ? template.accentColor : '#ffffff',
+          textShadow: template.id === 'classic' 
+            ? `0 0 10px ${template.accentColor}50, 0 2px 4px rgba(0, 0, 0, 0.8)` 
+            : template.id === 'dark'
+            ? `0 0 15px ${template.accentColor}70, 0 2px 4px rgba(0, 0, 0, 0.8)`
+            : '0 2px 4px rgba(0, 0, 0, 0.9)', 
           fontWeight: 700, // 更粗的字体
         }}
         className={`poster-title ${titleHasGradient ? 'gradient-text' : ''}`}
       >
-        {title}
+        {title || '您的海报标题'}
       </PosterTitle>
       
       <PosterDate style={{
@@ -469,8 +744,17 @@ const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, 
                 <NewsTitle 
                   style={{
                     ...newsTitleStyle,
-                    color: '#ffffff', // 确保标题为白色
-                    textShadow: '0 1px 3px rgba(0, 0, 0, 0.9)', // 增强阴影
+                    // 根据模板ID设置新闻标题颜色
+                    color: template.id === 'classic' ? template.accentColor : 
+                           template.id === 'modern' ? template.accentColor : 
+                           template.id === 'dark' ? template.accentColor : '#ffffff',
+                    textShadow: template.id === 'classic'
+                      ? `0 0 5px ${template.accentColor}40, 0 1px 2px rgba(0, 0, 0, 0.6)`
+                      : template.id === 'modern'
+                      ? `0 0 8px ${template.accentColor}50, 0 1px 2px rgba(0, 0, 0, 0.6)` 
+                      : template.id === 'dark'
+                      ? `0 0 8px ${template.accentColor}70, 0 1px 2px rgba(0, 0, 0, 0.8)`
+                      : '0 1px 3px rgba(0, 0, 0, 0.9)',
                     fontWeight: 600, // 更粗的字体
                   }}
                   className={`news-title ${newsTitleStyle && newsTitleStyle.backgroundImage ? 'gradient-text' : ''}`}
@@ -497,13 +781,8 @@ const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, 
       </NewsList>
       
       <QRCodeContainer>
-        {qrCode ? (
-          <QRCodeImage src={qrCode} alt="QR Code" />
-        ) : (
-          <PlaceholderText>
-            请上传二维码...
-          </PlaceholderText>
-        )}
+        {/* 使用displayQrCode代替qrCode */}
+        <QRCodeImage src={displayQrCode} alt="QR Code" />
         <QRCodeFooter style={{
           color: '#ffffff', // 确保页脚文字为白色
           textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)', // 增强阴影

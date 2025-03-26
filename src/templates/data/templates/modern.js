@@ -2,7 +2,7 @@
 const modern = {
   id: 'modern',
   name: '现代简约',
-  backgroundColor: '#000000',
+  backgroundColor: 'linear-gradient(135deg, #042f2e 0%, #134e4a 50%, #0f766e 100%)',
   textColor: '#ffffff',
   accentColor: '#06b6d4',
   titleFont: "'Noto Sans SC', sans-serif",
