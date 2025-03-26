@@ -1,0 +1,7 @@
+{
+  "name": "poster-templates",
+  "version": "1.0.0",
+  "description": "Poster templates for the MCP application",
+  "main": "index.js",
+  "private": true
+}
