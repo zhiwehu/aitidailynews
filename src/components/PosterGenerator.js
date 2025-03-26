@@ -605,8 +605,6 @@ const PosterGenerator = () => {
         setTitle={setTitle}
         newsJson={newsJson}
         handleNewsJsonChange={handleNewsJsonChange}
-        generating={generating}
-        generatePoster={generatePoster}
       />
       
       <PreviewSection 
@@ -616,6 +614,8 @@ const PosterGenerator = () => {
         title={title}
         newsItems={newsItems}
         templateId={templateId}
+        generating={generating}
+        generatePoster={generatePoster}
       />
     </Content>
   );

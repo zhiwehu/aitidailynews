@@ -1,8 +1,8 @@
 import React from 'react';
 import PosterPreview from './PosterPreview';
-import { PreviewContainer, SectionContainer, SectionHeading } from './styles/CommonStyles';
+import { GenerateButton, PreviewContainer, SectionContainer, SectionHeading } from './styles/CommonStyles';
 
-const PreviewSection = ({ posterRef, logo, qrCode, title, newsItems, templateId }) => {
+const PreviewSection = ({ posterRef, logo, qrCode, title, newsItems, templateId, generating, generatePoster }) => {
   return (
     <SectionContainer className="glass-card">
       <SectionHeading>海报预览</SectionHeading>
@@ -17,6 +17,14 @@ const PreviewSection = ({ posterRef, logo, qrCode, title, newsItems, templateId 
           className="poster-container"
         />
       </PreviewContainer>
+      
+      <GenerateButton 
+        onClick={generatePoster}
+        disabled={generating}
+        style={{ marginTop: '20px' }}
+      >
+        {generating ? '生成中...' : '生成海报'}
+      </GenerateButton>
     </SectionContainer>
   );
 };

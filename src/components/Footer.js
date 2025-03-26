@@ -129,8 +129,8 @@ const Footer = () => {
           <h2>AITi新闻海报生成器</h2>
         </FooterLogo>
         
-        <FooterLink href="https://getAITi.com" target="_blank" rel="noopener noreferrer">
-          官网：getAITi.com
+        <FooterLink href="https://hb.getAITi.com" target="_blank" rel="noopener noreferrer">
+          官网：hb.getAITi.com
         </FooterLink>
         
         <Copyright>

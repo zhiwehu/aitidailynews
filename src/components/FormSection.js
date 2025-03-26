@@ -1,6 +1,6 @@
 import React from 'react';
 import NewsForm from './NewsForm';
-import { GenerateButton, SectionContainer, SectionHeading } from './styles/CommonStyles';
+import { SectionContainer, SectionHeading } from './styles/CommonStyles';
 import TemplateSelector from './TemplateSelector';
 
 const FormSection = ({ 
@@ -11,9 +11,7 @@ const FormSection = ({
   title, 
   setTitle, 
   newsJson, 
-  handleNewsJsonChange, 
-  generating, 
-  generatePoster 
+  handleNewsJsonChange
 }) => {
   return (
     <SectionContainer className="glass-card">
@@ -56,13 +54,6 @@ const FormSection = ({
         newsJson={newsJson} 
         handleNewsJsonChange={handleNewsJsonChange} 
       />
-      
-      <GenerateButton 
-        onClick={generatePoster}
-        disabled={generating}
-      >
-        {generating ? '生成中...' : '生成海报'}
-      </GenerateButton>
     </SectionContainer>
   );
 };
