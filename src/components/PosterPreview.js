@@ -17,7 +17,7 @@ const DEFAULT_LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="200" he
 const DEFAULT_LOGO = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(DEFAULT_LOGO_SVG)}`;
 
 // 默认二维码URL
-const DEFAULT_QR_CODE_URL = "https://getAITi.com";
+const DEFAULT_QR_CODE_URL = "https://hb.getAITi.com";
 
 const PosterContainer = styled.div`
   width: 375px;
@@ -273,9 +273,21 @@ const PosterContainer = styled.div`
     .poster-title {
       color: #ffffff !important; // 纯白色标题
       text-shadow: 0 0 10px rgba(6, 182, 212, 0.5) !important; // 青色辉光效果
-      border-bottom: 2px solid rgba(6, 182, 212, 0.4); // 青色底边
+      border-bottom: none !important; // 使用伪元素实现底边，避免双线
       padding-bottom: 8px; // 底边距离
       font-weight: 600 !important;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40%;
+        height: 2px;
+        background-color: rgba(6, 182, 212, 0.4);
+      }
     }
     
     .news-title {
@@ -301,11 +313,6 @@ const PosterContainer = styled.div`
     backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  
-  /* Fix for double borders during export */
-  &.export-mode .poster-title {
-    border-bottom: none !important;
   }
   
   @media (max-width: 768px) {
@@ -793,7 +800,7 @@ const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, 
           textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)', // 增强阴影
         }} $color={template.textColor}>
           Made with ❤️ by AITi<br />
-          https://getAITi.com
+          https://hb.getAITi.com
         </QRCodeFooter>
       </QRCodeContainer>
     </PosterContainer>

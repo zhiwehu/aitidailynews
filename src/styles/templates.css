@@ -123,6 +123,24 @@
   border-bottom: none !important;
 }
 
+/* Specific fixes for modern template during export */
+.export-mode [data-template="modern"] .poster-title,
+.export-mode .template-modern .poster-title {
+  border-bottom: none !important;
+}
+
+.export-mode [data-template="modern"] .poster-title::after,
+.export-mode .template-modern .poster-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 2px;
+  background-color: #06b6d4;
+}
+
 /* Template-specific export mode fixes to prevent double borders */
 .export-mode [data-template="techGeek"] .poster-title,
 .export-mode [data-template="futuristic"] .poster-title,
