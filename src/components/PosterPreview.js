@@ -331,12 +331,23 @@ const LogoContainer = styled.div`
   max-width: 100px;
   max-height: 40px;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const LogoImage = styled.div`
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  
+  img {
+    max-width: 100%;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
 `;
 
 const PosterTitle = styled.h1`
