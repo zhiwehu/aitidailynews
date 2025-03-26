@@ -1,0 +1,119 @@
+/* Templates CSS for handling pseudo-elements and special styling */
+
+/* Title Styling */
+.poster-title::after {
+  content: "";
+  display: block;
+}
+
+/* Elegant template title */
+[data-template="elegant"] .poster-title {
+  padding-bottom: 5px;
+}
+
+[data-template="elegant"] .poster-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 3px;
+  background-color: currentColor;
+}
+
+/* Modern template title */
+[data-template="modern"] .poster-title {
+  padding-bottom: 5px;
+  position: relative;
+  display: inline-block;
+}
+
+[data-template="modern"] .poster-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 3px;
+  background-color: currentColor;
+}
+
+/* News Item Styling */
+
+/* Elegant quote mark */
+[data-template="elegant"] .news-item::before {
+  content: "❝";
+  color: rgba(128, 90, 213, 0.2);
+  font-size: 60px;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  z-index: 0;
+  font-family: serif;
+}
+
+/* Separated news item underline */
+[data-template="modern"] .news-item::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 40%;
+  height: 2px;
+  background-color: #38b2ac;
+}
+
+/* Leafy decoration */
+[data-template="nature"] .news-item::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(56, 161, 105, 0.2);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* News Title Styling */
+
+/* Corporate news title counter */
+[data-template="corporate"] .news-title {
+  position: relative;
+  padding-left: 25px;
+}
+
+[data-template="corporate"] .news-title::before {
+  content: attr(data-count);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #3182ce;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Hover Effects */
+
+/* Bordered item hover */
+[data-template="classic"] .news-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(49, 130, 206, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Card item hover */
+[data-template="vibrant"] .news-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+} 

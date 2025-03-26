@@ -1,0 +1,21 @@
+{
+  "name": "wenwen-poster-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A news poster generator that allows users to customize logos, QR codes, and news content",
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.1"
+  }
+}
