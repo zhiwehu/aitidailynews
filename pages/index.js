@@ -5,6 +5,7 @@ import Footer from '../src/components/Footer';
 import NewsForm from '../src/components/NewsForm';
 import PosterPreview from '../src/components/PosterPreview';
 import TemplateSelector from '../src/components/TemplateSelector';
+import { templateList } from '../src/templates';
 
 const Container = styled.div`
   max-width: 1200px;
@@ -372,7 +373,16 @@ export default function Home() {
         const image = canvas.toDataURL('image/png');
         const link = document.createElement('a');
         link.href = image;
-        link.download = 'AITi海报.png';
+        
+        // 获取当前模板信息
+        const template = templateList.find(t => t.id === templateId) || { name: '默认模板' };
+        
+        // 生成含有模板名称的文件名
+        const date = new Date().toISOString().split('T')[0]; // YYYY-MM-DD 格式
+        const cleanTitle = title ? title.replace(/[^\w\u4e00-\u9fa5]/g, '_').substring(0, 20) : '海报';
+        const fileName = `${cleanTitle}_${template.name}_${date}.png`;
+        
+        link.download = fileName;
         link.click();
       } catch (error) {
         console.error('Failed to generate poster:', error);

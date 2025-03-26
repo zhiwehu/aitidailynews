@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import {
-    applyTemplateNewsContentStyles,
-    applyTemplateNewsItemStyles,
-    applyTemplateNewsTitleStyles,
-    applyTemplateStyles,
-    applyTemplateTitleStyles,
-    getTemplateById
+  applyTemplateNewsContentStyles,
+  applyTemplateNewsItemStyles,
+  applyTemplateNewsTitleStyles,
+  applyTemplateStyles,
+  applyTemplateTitleStyles,
+  getTemplateById
 } from '../templates';
 
 const PosterContainer = styled.div`
@@ -177,7 +177,7 @@ const createPseudoStyles = (styles) => {
   return { pseudoStyles, normalStyles };
 };
 
-const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId }, ref) => {
+const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId, onExport }, ref) => {
   const template = getTemplateById(templateId);
   
   const formattedDate = new Intl.DateTimeFormat('zh-CN', {
@@ -193,6 +193,21 @@ const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId }
   
   // Extract pseudo-element styles
   const { pseudoStyles, normalStyles } = createPseudoStyles(containerStyle);
+  
+  // 生成海报文件名（包含模板名称）
+  const generatePosterFilename = () => {
+    const date = new Date().toISOString().split('T')[0]; // YYYY-MM-DD 格式
+    const cleanTitle = title ? title.replace(/[^\w\u4e00-\u9fa5]/g, '_').substring(0, 20) : '海报';
+    // 将模板名称添加到文件名中
+    return `${cleanTitle}_${template.name}_${date}.png`;
+  };
+  
+  // 创建导出函数，将文件名传递给父组件
+  const handleExport = () => {
+    if (onExport && typeof onExport === 'function') {
+      onExport(generatePosterFilename());
+    }
+  };
   
   // Create dynamic pseudo elements if needed
   const renderBackgroundElements = () => {
@@ -234,8 +249,15 @@ const PosterPreview = forwardRef(({ logo, qrCode, title, newsItems, templateId }
   return (
     <PosterContainer 
       ref={ref}
-      style={normalStyles}
+      style={{
+        ...normalStyles,
+        // 清除背景相关的所有样式，确保每次切换时完全重置
+        backgroundColor: template.backgroundColor,
+        backgroundImage: template.backgroundImage ? `url(${template.backgroundImage})` : 'none',
+        background: normalStyles.background
+      }}
       data-template={template.id}
+      key={templateId} // 添加key确保组件在模板变化时完全重新渲染
     >
       {renderBackgroundElements()}
       

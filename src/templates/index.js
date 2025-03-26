@@ -15,7 +15,7 @@ export const templateList = [
     itemShadow: true,
     goldAccents: true,
     glassEffect: true,
-    backgroundImage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%233182ce' fill-opacity='0.05' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z'/%3E%3C/svg%3E"
+    backgroundImage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%233182ce' fill-opacity='0.05' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm-56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z' fill='%23047857' fill-opacity='0.08'/%3E%3C/svg%3E"
   },
   {
     id: 'modern',
@@ -38,9 +38,9 @@ export const templateList = [
   {
     id: 'dark',
     name: '暗黑科技',
-    backgroundColor: 'linear-gradient(135deg, #0a0e17 0%, #1a202c 50%, #2d3748 100%)',
+    backgroundColor: 'linear-gradient(135deg, #000000 0%, #0a0e17 40%, #1a202c 100%)',
     textColor: '#e2e8f0',
-    accentColor: '#f6ad55',
+    accentColor: '#10b981',
     titleFont: "'Noto Sans SC', sans-serif",
     contentFont: "'Noto Sans SC', sans-serif",
     logoPosition: 'top-left',
@@ -50,7 +50,10 @@ export const templateList = [
     neonAccents: true,
     matrixEffect: true,
     circuitPattern: true,
-    backgroundImage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23f6ad55' fill-opacity='0.08' d='M0 0h1v1H0zM10 10h1v1h-1zM20 20h1v1h-1zM30 30h1v1h-1zM40 40h1v1h-1zM50 50h1v1h-1zM60 60h1v1h-1zM70 70h1v1h-1zM80 80h1v1h-1zM90 90h1v1h-1zM5 5h2v2H5zM15 15h2v2h-2zM25 25h2v2h-2zM35 35h2v2h-2zM45 45h2v2h-2zM55 55h2v2h-2zM65 65h2v2h-2zM75 75h2v2h-2zM85 85h2v2h-2zM95 95h2v2h-2z'/%3E%3C/svg%3E"
+    cyberDecoration: true,
+    laserLines: true,
+    techBlocks: true,
+    backgroundImage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%2310b981' fill-opacity='0.1' d='M0 0h1v1H0zM10 10h1v1h-1zM20 20h1v1h-1zM30 30h1v1h-1zM40 40h1v1h-1zM50 50h1v1h-1zM60 60h1v1h-1zM70 70h1v1h-1zM80 80h1v1h-1zM90 90h1v1h-1zM5 5h2v2H5zM15 15h2v2h-2zM25 25h2v2h-2zM35 35h2v2h-2zM45 45h2v2h-2zM55 55h2v2h-2zM65 65h2v2h-2zM75 75h2v2h-2zM85 85h2v2h-2zM95 95h2v2h-2z'/%3E%3C/svg%3E"
   },
   {
     id: 'elegant',
@@ -73,7 +76,7 @@ export const templateList = [
     id: 'vibrant',
     name: '活力渐变',
     backgroundColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #6B46C1 100%)',
-    textColor: '#ffffff',
+    textColor: '#fdf6e3',
     accentColor: '#fbd38d',
     titleFont: "'Noto Sans SC', sans-serif",
     contentFont: "'Noto Sans SC', sans-serif",
@@ -84,6 +87,8 @@ export const templateList = [
     duotoneEffect: true,
     animated3D: true,
     neonBorders: true,
+    contrastEnhanced: true,
+    textShadow: true,
     backgroundImage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23fbd38d' fill-opacity='0.1' d='M15 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm35 0a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm35 0a5 5 0 1 1 0-10 5 5 0 0 1 0 10zM15 50a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm35 0a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm35 0a5 5 0 1 1 0-10 5 5 0 0 1 0 10zM15 85a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm35 0a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm35 0a5 5 0 1 1 0-10 5 5 0 0 1 0 10z'/%3E%3C/svg%3E"
   },
   {
@@ -118,7 +123,7 @@ export const templateList = [
     warmGlow: true,
     sunriseEffect: true,
     goldenHourLight: true,
-    backgroundImage: "data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dd6b20' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cg fill-rule='nonzero'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6h-2c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h-2c0 3.314 2.686 6 6 6 2.21 0 4 1.79 4 4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"
+    backgroundImage: "data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dd6b20' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cg fill-rule='nonzero'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6h-2c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h-2c0 3.314 2.686 6 6 6 2.21 0 4 1.79 4 4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"
   },
   {
     id: 'nature',
@@ -135,7 +140,7 @@ export const templateList = [
     organicShapes: true,
     naturalTexture: true,
     flowerPattern: true,
-    backgroundImage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm-56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z' fill='%23047857' fill-opacity='0.08'/%3E%3C/svg%3E"
+    backgroundImage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='%23047857' fill-opacity='0.08' d='M38.3 41.8c-5.4 5.4-7.4 13-5.8 20.1-6.9-1.8-14.5 0-19.9 5.4-5.4 5.4-7.4 13-5.8 20.1-6.9-1.8-14.5 0-19.9 5.4-7.4 7.4-7.4 19.4 0 26.8 7.4 7.4 19.4 7.4 26.8 0 5.4-5.4 7.2-13 5.4-19.9 7.1 1.6 14.7-0.4 20.1-5.8 5.4-5.4 7.2-13 5.4-19.9 7.1 1.6 14.7-0.4 20.1-5.8 7.4-7.4 7.4-19.4 0-26.8-7.4-7.2-19.4-7.2-26.8 0.4zM114.4 64c-5.4 5.4-7.4 13-5.8 20.1-6.9-1.8-14.5 0-19.9 5.4-5.4 5.4-7.4 13-5.8 20.1-6.9-1.8-14.5 0-19.9 5.4-7.4 7.4-7.4 19.4 0 26.8 7.4 7.4 19.4 7.4 26.8 0 5.4-5.4 7.2-13 5.4-19.9 7.1 1.6 14.7-0.4 20.1-5.8 5.4-5.4 7.2-13 5.4-19.9 7.1 1.6 14.7-0.4 20.1-5.8 7.4-7.4 7.4-19.4 0-26.8-7.4-7.2-19.4-7.2-26.8 0.4zM190.6 86.2c-5.4 5.4-7.4 13-5.8 20.1-6.9-1.8-14.5 0-19.9 5.4-5.4 5.4-7.4 13-5.8 20.1-6.9-1.8-14.5 0-19.9 5.4-7.4 7.4-7.4 19.4 0 26.8 7.4 7.4 19.4 7.4 26.8 0 5.4-5.4 7.2-13 5.4-19.9 7.1 1.6 14.7-0.4 20.1-5.8 5.4-5.4 7.2-13 5.4-19.9 7.1 1.6 14.7-0.4 20.1-5.8 7.4-7.4 7.4-19.4 0-26.8-7.4-7.3-19.4-7.3-26.8 0.4zM67.5 153.3c-5.4 5.4-7.4 13-5.8 20.1-6.9-1.8-14.5 0-19.9 5.4-7.4 7.4-7.4 19.4 0 26.8 7.4 7.4 19.4 7.4 26.8 0 5.4-5.4 7.2-13 5.4-19.9 7.1 1.6 14.7-0.4 20.1-5.8 7.4-7.4 7.4-19.4 0-26.8-7.4-7.3-19.4-7.3-26.6 0.2zM143.7 19.6c-5.4 5.4-7.4 13-5.8 20.1-6.9-1.8-14.5 0-19.9 5.4-7.4 7.4-7.4 19.4 0 26.8 7.4 7.4 19.4 7.4 26.8 0 5.4-5.4 7.2-13 5.4-19.9 7.1 1.6 14.7-0.4 20.1-5.8 7.4-7.4 7.4-19.4 0-26.8-7.4-7.3-19.4-7.3-26.6 0.2z'/%3E%3C/svg%3E"
   },
   {
     id: 'techGeek',
@@ -171,6 +176,7 @@ export const templateList = [
     laserGrid: true,
     digitalRain: true,
     neonOutlines: true,
+    improvedContrast: true,
     backgroundImage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%238b5cf6' fill-opacity='0.15' d='M0 0h1v1H0zM12 0h1v1h-1zM24 0h1v1h-1zM36 0h1v1h-1zM48 0h1v1h-1zM60 0h1v1h-1zM72 0h1v1h-1zM84 0h1v1h-1zM96 0h1v1h-1zM0 12h1v1H0zM12 12h1v1h-1zM24 12h1v1h-1zM36 12h1v1h-1zM48 12h1v1h-1zM60 12h1v1h-1zM72 12h1v1h-1zM84 12h1v1h-1zM96 12h1v1h-1zM0 24h1v1H0zM12 24h1v1h-1zM24 24h1v1h-1zM36 24h1v1h-1zM48 24h1v1h-1zM60 24h1v1h-1zM72 24h1v1h-1zM84 24h1v1h-1zM96 24h1v1h-1zM0 36h1v1H0zM12 36h1v1h-1zM24 36h1v1h-1zM36 36h1v1h-1zM48 36h1v1h-1zM60 36h1v1h-1zM72 36h1v1h-1zM84 36h1v1h-1zM96 36h1v1h-1zM0 48h1v1H0zM12 48h1v1h-1zM24 48h1v1h-1zM36 48h1v1h-1zM48 48h1v1h-1zM60 48h1v1h-1zM72 48h1v1h-1zM84 48h1v1h-1zM96 48h1v1h-1zM0 60h1v1H0zM12 60h1v1h-1zM24 60h1v1h-1zM36 60h1v1h-1zM48 60h1v1h-1zM60 60h1v1h-1zM72 60h1v1h-1zM84 60h1v1h-1zM96 60h1v1h-1zM0 72h1v1H0zM12 72h1v1h-1zM24 72h1v1h-1zM36 72h1v1h-1zM48 72h1v1h-1zM60 72h1v1h-1zM72 72h1v1h-1zM84 72h1v1h-1zM96 72h1v1h-1zM0 84h1v1H0zM12 84h1v1h-1zM24 84h1v1h-1zM36 84h1v1h-1zM48 84h1v1h-1zM60 84h1v1h-1zM72 84h1v1h-1zM84 84h1v1h-1zM96 84h1v1h-1zM0 96h1v1H0zM12 96h1v1h-1zM24 96h1v1h-1zM36 96h1v1h-1zM48 96h1v1h-1zM60 96h1v1h-1zM72 96h1v1h-1zM84 96h1v1h-1zM96 96h1v1h-1z'/%3E%3C/svg%3E"
   },
   {
@@ -189,6 +195,25 @@ export const templateList = [
     boldTypography: true,
     geometricShapes: true,
     backgroundImage: "data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5v1H5z'/%3E%3C/g%3E%3C/svg%3E"
+  },
+  {
+    id: 'fieryRed',
+    name: '热情红艳',
+    backgroundColor: 'linear-gradient(135deg, #7f1d1d 0%, #b91c1c 40%, #dc2626 100%)', // 更深更暗的红色渐变
+    textColor: '#fef2f2',
+    accentColor: '#dc2626', // 更改强调色为热烈的红色
+    titleFont: "'Noto Sans SC', sans-serif",
+    contentFont: "'Noto Sans SC', sans-serif",
+    logoPosition: 'top-center',
+    qrPosition: 'bottom-center',
+    newsItemStyle: 'fiery',
+    passionflameBorder: true,
+    dynamicGradients: true,
+    energeticWaves: true,
+    fireEffects: true,
+    boldAccents: true,
+    highContrast: true,
+    backgroundImage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23dc2626' fill-opacity='0.15' d='M58.9,51c-9.9,3.1-16.2-9.1-11.9-19.2c1.3-3.1,2.6-8.5,0.9-11.3c-2.6-4.3-10.9-0.9-14.3,3.2c-12.8,15.4-6.4,40.3,15.4,38c10.8-1.1,19.9-12.7,15.8-22.7C63.9,36.1,61.3,49.9,58.9,51z M28.7,79.4c-5.7-0.3-12.2-4.1-13.8-9.6c-2.5-8.3,6.4-16.9,14.1-18.5c3.7-0.8,7.5-0.2,10.9,1.5c2.7,1.3,5.1,3.1,7.7,4.7c4.8,2.9,10.3,5.7,15.6,3.9c14-5,14.8-23.6,6.2-33.9c-6.3-7.6-19.4-11.1-27.7-4.3c-4.7,3.8-6.5,9.8-5.3,15.2c1.1,5.1,4.8,9.3,8.2,13c-1.3,3.2-3.5,5.6-7.4,4.3c-5.7-1.9-9.6-7.8-11.8-13.1c-2.2-5.3-3.2-11.2-1.1-16.8c2.6-7.2,8.9-12.3,16.7-13.5c12.5-1.9,25.7,6.7,29.9,18.3c1.6,4.4,1.7,9.1,0.9,13.7c-0.8,4.6-2.6,8.9-5.7,12.3c-7.4,8.1-19.5,8.8-29.4,5c-3.3-1.3-10.8-5.2-11.5-8.4c-0.2-1.2,1-3.5,1.3-4.9c1.3-6.1-3.6-12.5-10.1-11.3c-12,2.1-10.5,19.2-3.8,26.3c9.4,10,24.7,12.9,36.5,6.4c16-8.7,19.3-28.8,16.5-44c-2.1-11.5-9.1-22.5-19-29.4c-21.1-14.7-52.4-2.1-59.1,22.7c-2.3,8.6-1.7,17.8,1.5,26c3.2,8.2,8.5,15.4,14.6,21.6c12.2,12.1,27.3,21.8,44.5,23.8c16.5,1.9,37.2-4.2,42.7-21.8c2.3-7.6,0.9-16.1-3.4-22.7c-4.5-6.9-11.5-11.8-19.3-14.5c-7.8-2.7-16.3-3.6-24.6-2.8c-8.2,0.8-16.5,3.4-23.4,7.7c-6.7,4.2-12.1,10.1-15.4,17.4c-3.2,7.2-3.9,15.2-2.5,22.9c1.3,7.5,4.4,14.8,9.2,20.7C2.8,88.2,18.8,79.8,28.7,79.4z'/%3E%3C/svg%3E"
   }
 ];
 
@@ -199,6 +224,7 @@ export const getTemplateById = (id) => {
 
 // Apply template styles to container
 export const applyTemplateStyles = (template) => {
+  // 确保首先重置所有样式为默认值
   let styles = {
     background: template.backgroundImage ? 
       `${template.backgroundColor ? template.backgroundColor + ',' : ''} url(${template.backgroundImage}) center/cover no-repeat` : 
@@ -206,9 +232,18 @@ export const applyTemplateStyles = (template) => {
     color: template.textColor,
     fontFamily: template.contentFont,
     position: 'relative',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    // 添加这些清除属性，确保不会保留上一个模板的样式
+    backgroundImage: template.backgroundImage ? `url(${template.backgroundImage})` : 'none',
+    backgroundBlendMode: 'normal', 
+    boxShadow: 'none',
+    backdropFilter: 'none',
+    border: 'none',
+    borderLeft: 'none',
+    borderRight: 'none'
   };
 
+  // 后续的其他模板特定样式
   if (template.subtlePattern && !template.backgroundImage) {
     styles = {
       ...styles,
@@ -227,7 +262,7 @@ export const applyTemplateStyles = (template) => {
   if (template.leafPattern && template.id === 'nature') {
     styles = {
       ...styles,
-      backgroundImage: `linear-gradient(0deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23047857' fill-opacity='0.15' d='M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z' /%3E%3C/svg%3E")`
+      backgroundImage: `linear-gradient(0deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='%23047857' fill-opacity='0.12' d='M20.9 6c-3.3 3.3-4.1 8-2.4 12.2-4.8-1.5-9.9.2-13.2 3.5-3.3 3.3-5 8.4-3.5 13.2-4.2-1.6-8.9-.9-12.2 2.4-4.4 4.4-4.4 11.5 0 15.9 4.4 4.4 11.5 4.4 15.9 0 3.3-3.3 4.1-8 2.4-12.2 4.8 1.5 9.9-.2 13.2-3.5 3.3-3.3 5-8.4 3.5-13.2 4.2 1.6 8.9.9 12.2-2.4 4.4-4.4 4.4-11.5 0-15.9-4.4-4.4-11.5-4.4-15.9 0zm45 40c-3.3 3.3-4.1 8-2.4 12.2-4.8-1.5-9.9.2-13.2 3.5-3.3 3.3-5 8.4-3.5 13.2-4.2-1.6-8.9-.9-12.2 2.4-4.4 4.4-4.4 11.5 0 15.9 4.4 4.4 11.5 4.4 15.9 0 3.3-3.3 4.1-8 2.4-12.2 4.8 1.5 9.9-.2 13.2-3.5 3.3-3.3 5-8.4 3.5-13.2 4.2 1.6 8.9.9 12.2-2.4 4.4-4.4 4.4-11.5 0-15.9-4.4-4.4-11.5-4.4-15.9 0zm70 65c-3.3 3.3-4.1 8-2.4 12.2-4.8-1.5-9.9.2-13.2 3.5-3.3 3.3-5 8.4-3.5 13.2-4.2-1.6-8.9-.9-12.2 2.4-4.4 4.4-4.4 11.5 0 15.9 4.4 4.4 11.5 4.4 15.9 0 3.3-3.3 4.1-8 2.4-12.2 4.8 1.5 9.9-.2 13.2-3.5 3.3-3.3 5-8.4 3.5-13.2 4.2 1.6 8.9.9 12.2-2.4 4.4-4.4 4.4-11.5 0-15.9-4.4-4.4-11.5-4.4-15.9 0zm-80 35c-3.3 3.3-4.1 8-2.4 12.2-4.8-1.5-9.9.2-13.2 3.5-4.4 4.4-4.4 11.5 0 15.9 4.4 4.4 11.5 4.4 15.9 0 3.3-3.3 4.1-8 2.4-12.2 4.8 1.5 9.9-.2 13.2-3.5 4.4-4.4 4.4-11.5 0-15.9-4.4-4.4-11.5-4.4-15.9 0zm80-110c-3.3 3.3-4.1 8-2.4 12.2-4.8-1.5-9.9.2-13.2 3.5-4.4 4.4-4.4 11.5 0 15.9 4.4 4.4 11.5 4.4 15.9 0 3.3-3.3 4.1-8 2.4-12.2 4.8 1.5 9.9-.2 13.2-3.5 4.4-4.4 4.4-11.5 0-15.9-4.4-4.4-11.5-4.4-15.9 0z'/%3E%3C/svg%3E")`
     };
   }
   
@@ -241,8 +276,9 @@ export const applyTemplateStyles = (template) => {
         right: '0',
         width: '100%',
         height: '100%',
-        backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath fill='%23047857' fill-opacity='0.1' d='M20 0c11.046 0 20 8.954 20 20s-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0zm0 5C12.268 5 5 12.268 5 20s7.268 15 15 15 15-7.268 15-15S27.732 5 20 5zm0 5c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10z'/%3E%3C/svg%3E\")",
-        zIndex: 0
+        backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23047857' fill-opacity='0.08'%3E%3Cpath d='M20 20c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 13c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm40-5c0 2.8-2.2 5-5 5s-5-2.2-5-5 2.2-5 5-5 5 2.2 5 5zm2 0c0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7 7-3.1 7-7zm-27 40c2.8 0 5-2.2 5-5s-2.2-5-5-5-5 2.2-5 5 2.2 5 5 5zm0 2c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zm5-37c2.8 0 5-2.2 5-5s-2.2-5-5-5-5 2.2-5 5 2.2 5 5 5zm0 2c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zm-5 12c2.8 0 5-2.2 5-5s-2.2-5-5-5-5 2.2-5 5 2.2 5 5 5zm0 2c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zm-20-5c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5-5-2.2-5-5zm-2 0c0 3.9 3.1 7 7 7s7-3.1 7-7-3.1-7-7-7-7 3.1-7 7zm60 13c0 2.8-2.2 5-5 5s-5-2.2-5-5 2.2-5 5-5 5 2.2 5 5zm2 0c0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7 7-3.1 7-7zm-5-28c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-2c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-40 0c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm20 20c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm20 20c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-40 0c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3z'/%3E%3C/g%3E%3C/svg%3E\")",
+        zIndex: 0,
+        opacity: 0.7
       }
     };
   }
@@ -315,7 +351,7 @@ export const applyTemplateStyles = (template) => {
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23f6ad55' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E\")",
+        backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2310b981' fill-opacity='0.3' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E\")",
         zIndex: 0
       }
     };
@@ -331,12 +367,57 @@ export const applyTemplateStyles = (template) => {
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23f6ad55' fill-opacity='0.08' d='M0 0h1v1H0zM10 10h1v1h-1zM20 20h1v1h-1zM30 30h1v1h-1zM40 40h1v1h-1zM50 50h1v1h-1zM60 60h1v1h-1zM70 70h1v1h-1zM80 80h1v1h-1zM90 90h1v1h-1zM5 5h2v2H5zM15 15h2v2h-2zM25 25h2v2h-2zM35 35h2v2h-2zM45 45h2v2h-2zM55 55h2v2h-2zM65 65h2v2h-2zM75 75h2v2h-2zM85 85h2v2h-2zM95 95h2v2h-2z'/%3E%3C/svg%3E\")",
+        backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%2310b981' fill-opacity='0.15' d='M0 0h1v1H0zM10 10h1v1h-1zM20 20h1v1h-1zM30 30h1v1h-1zM40 40h1v1h-1zM50 50h1v1h-1zM60 60h1v1h-1zM70 70h1v1h-1zM80 80h1v1h-1zM90 90h1v1h-1zM5 5h2v2H5zM15 15h2v2h-2zM25 25h2v2h-2zM35 35h2v2h-2zM45 45h2v2h-2zM55 55h2v2h-2zM65 65h2v2h-2zM75 75h2v2h-2zM85 85h2v2h-2zM95 95h2v2h-2z'/%3E%3C/svg%3E\")",
         zIndex: 0
       }
     };
   }
 
+  if (template.cyberDecoration && template.id === 'dark') {
+    styles = {
+      ...styles,
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        bottom: '20px',
+        right: '20px',
+        width: '120px',
+        height: '120px',
+        borderRight: `2px solid ${template.accentColor}60`,
+        borderBottom: `2px solid ${template.accentColor}60`,
+        opacity: 0.6,
+        zIndex: 0
+      }
+    };
+  }
+  
+  if (template.laserLines && template.id === 'dark') {
+    styles = {
+      ...styles,
+      background: `${template.backgroundColor}, repeating-linear-gradient(0deg, transparent, transparent 5px, ${template.accentColor}10 5px, ${template.accentColor}10 6px)`,
+      backgroundBlendMode: 'normal, overlay'
+    };
+  }
+
+  if (template.techBlocks && template.id === 'dark') {
+    styles = {
+      ...styles,
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        bottom: '30px',
+        left: '30px',
+        width: '60px',
+        height: '60px',
+        border: `1px solid ${template.accentColor}40`,
+        borderRadius: '4px',
+        boxShadow: `0 0 10px ${template.accentColor}30`,
+        opacity: 0.7,
+        zIndex: 0
+      }
+    };
+  }
+  
   if (template.serifDetails && template.id === 'elegant') {
     styles = {
       ...styles,
@@ -432,7 +513,7 @@ export const applyTemplateStyles = (template) => {
         left: '0',
         width: '100%',
         height: '100%',
-        backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dd6b20' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cg fill-rule='nonzero'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6h-2c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h-2c0 3.314 2.686 6 6 6 2.21 0 4 1.79 4 4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+        backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dd6b20' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cg fill-rule='nonzero'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6h-2c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h-2c0 3.314 2.686 6 6 6 2.21 0 4 1.79 4 4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
         zIndex: 0
       }
     };
@@ -446,11 +527,33 @@ export const applyTemplateStyles = (template) => {
         position: 'absolute',
         bottom: '30px',
         right: '-20px',
-        width: '100px',
-        height: '100px',
-        background: `radial-gradient(circle, ${template.accentColor}15 0%, transparent 70%)`,
+        width: '180px',
+        height: '180px',
+        background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cpath fill='%23047857' fill-opacity='0.1' d='M91.4 104.7c-14.4 14.9-51.5 13.2-78.1-13.6C-13.3 64.2-13.6 27 10.9 10.9 27-5.8 64.2-5.5 90.7 21.1c29.6 26.6 26.9 63.7 12.5 78.7l-7.6-7.4c10.2-10.5 9.4-39.8-14.7-64C59.7 7.2 34.1 8.1 20.2 22c-14 13.8-14.8 39.5 6.4 60.7 19.3 19.3 48.7 24.2 57.2 15.7l7.6 6.3z'/%3E%3Cpath fill='%23047857' fill-opacity='0.1' d='M96.7 83.3c-6.2 6.4-30.1 3.3-52-18.6C22.7 42.8 20.4 19 33.5 6c13.2-13.1 36.9-11.7 59.2 10.5 24.2 22.7 22.4 46.1 15.7 52.6l-4.9-4.8c4.4-4.5 5-22.2-13.6-41.1-17-16-35.2-15.8-44.4-6.5-9.3 9.2-10.4 27.1 5.8 43.3 15 15.1 32.2 16.5 36.5 12.1l4.9 4.8c4.9 0 0 0 0 0z'/%3E%3Cpath fill='%23047857' fill-opacity='0.1' d='M112.3 55.3c-2.6 2.6-14.8.2-26.1-11.2-11.3-11.3-14.2-23.4-10.6-27 3.6-3.6 15.7-.7 27 10.6 12.2 11.8 14.6 23.7 11.1 27.2l-2.1-2c2-2.1.7-10.7-8.3-19.7-8.3-8.4-16.8-10.4-19.7-7.5-3 2.9-1.2 11.4 7.1 19.7 7.7 7.8 16.3 9.7 18.9 7.1l2.7 2.8z'/%3E%3C/svg%3E")`,
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
         zIndex: 0,
-        borderRadius: '50%'
+        opacity: 0.8
+      }
+    };
+  }
+
+  if (template.naturalTexture && template.id === 'nature') {
+    styles = {
+      ...styles,
+      '&::before': {
+        ...styles['&::before'],
+        content: '""',
+        position: 'absolute',
+        top: '10px',
+        left: '10px',
+        width: '120px',
+        height: '120px',
+        background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath fill='%23047857' fill-opacity='0.15' d='M57.2 39.6c-4.4-7.6-14.4-9.6-21.8-5.5-3.7 2.1-6.3 5.3-7.6 9.1-1.1 3.1-1.1 6.6-.2 9.9-7.6.2-14.5 4.8-17.2 12.1-1.8 5 0 12.1 3.1 15.7 3.3 3.8 7.9 5.9 12.8 5.9h.2c1.8 3.5 5.1 6.3 9.2 7.4 8.2 2.2 16.1-2.1 18.3-9.5.3-.9.5-1.8.6-2.7 5.9 0 11.5-2.6 15.3-7.2 4.2-5 5.5-11.7 3.3-17.8-1.9-5.8-6.8-10.2-12.8-12.1-1-.3-2.1-.5-3.2-.6v.3z'/%3E%3C/svg%3E")`,
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        zIndex: 0,
+        opacity: 0.6
       }
     };
   }
@@ -560,6 +663,53 @@ export const applyTemplateStyles = (template) => {
     };
   }
 
+  // Apply styles for the new fieryRed template
+  if (template.fireEffects && template.id === 'fieryRed') {
+    styles = {
+      ...styles,
+      position: 'relative',
+      overflow: 'hidden',
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23b91c1c' fill-opacity='0.3' d='M30.4,37.9c-0.1,0.1-0.2,0.2-0.3,0.3c-0.5,0.6-1,1.1-1.5,1.7c-0.7,0.9-1.3,1.8-1.9,2.8c-1.3,2-2.2,4.2-3,6.4c-0.8,2.4-1.3,4.9-1.4,7.4c-0.1,2.5,0.1,5,0.7,7.4c0.6,2.2,1.4,4.4,2.7,6.3c1.3,1.9,2.9,3.5,4.8,4.7c1.8,1.1,3.8,1.9,5.9,2.2c2.2,0.3,4.5,0.2,6.7-0.4c2.2-0.6,4.2-1.6,6-2.8c1.8-1.3,3.3-2.8,4.6-4.6c1.3-1.8,2.2-3.7,2.8-5.8c0.6-2.1,0.8-4.2,0.8-6.4c0-2.3-0.4-4.5-1.1-6.6c-0.7-2.1-1.6-4-2.8-5.8c-1.2-1.8-2.6-3.3-4.1-4.7c-1.6-1.4-3.3-2.6-5.1-3.7c-1.6-0.9-3.2-1.8-4.8-2.6c-0.3-0.2-0.7-0.3-1-0.5c-0.1,0-0.1-0.1-0.2-0.1c-0.1,0-0.1,0-0.2,0c-0.2,0-0.3,0.1-0.5,0.2c-0.5,0.4-0.6,1.2-0.2,1.7c0.3,0.3,0.7,0.5,1.1,0.6c0.9,0.4,1.9,0.8,2.8,1.2c2,0.9,3.9,2,5.7,3.3c1.8,1.2,3.3,2.7,4.6,4.3c1.3,1.7,2.4,3.5,3.1,5.5c0.8,2,1.2,4.1,1.3,6.3c0.1,2.1-0.1,4.3-0.8,6.3c-0.6,2-1.5,3.9-2.7,5.5c-1.3,1.7-2.8,3.1-4.6,4.2c-1,0.6-2.1,1.1-3.3,1.5c0.2-0.3,0.5-0.6,0.7-0.9c0.6-0.9,1.1-1.8,1.5-2.8c0.4-1,0.7-2,0.9-3.1c0.2-1.1,0.2-2.1,0.1-3.2c-0.1-1.1-0.4-2.1-0.8-3.1c-0.5-1-1.1-1.9-1.9-2.7c-0.8-0.8-1.7-1.5-2.7-2c-1-0.5-2-0.9-3.1-1.1c-1.1-0.2-2.2-0.2-3.3,0c-1,0.2-2,0.5-2.9,1c-0.9,0.5-1.7,1.1-2.4,1.8c-0.7,0.8-1.3,1.6-1.7,2.5c-0.4,0.9-0.7,1.9-0.8,2.9c-0.1,1.1,0,2.1,0.3,3.1c0.3,1,0.7,1.9,1.3,2.8c0.6,0.8,1.4,1.6,2.2,2.2c0.9,0.6,1.8,1.1,2.8,1.4c1,0.3,2,0.5,3,0.5c-0.5,0.2-1,0.3-1.5,0.4c-2.1,0.5-4.4,0.6-6.5,0.2c-2.1-0.4-4.1-1.2-5.9-2.4c-1.8-1.2-3.2-2.7-4.4-4.5c-1.2-1.8-2-3.8-2.5-5.9c-0.6-2.2-0.8-4.4-0.7-6.7c0.1-2.4,0.6-4.7,1.3-6.9c0.8-2.2,1.8-4.3,3-6.2c0.6-0.9,1.2-1.8,1.9-2.6c0.3-0.4,0.7-0.8,1-1.2C30.3,37.7,30.4,37.8,30.4,37.9z'/%3E%3C/svg%3E\")",
+        backgroundSize: 'auto 100%',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        opacity: 0.8,
+        zIndex: 0
+      }
+    };
+  }
+
+  if (template.dynamicGradients && template.id === 'fieryRed') {
+    styles = {
+      ...styles,
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: '-20%',
+        width: '140%',
+        height: '100%',
+        background: 'linear-gradient(90deg, transparent 0%, rgba(185, 28, 28, 0.35) 50%, transparent 100%)',
+        zIndex: 0,
+        transform: 'rotate(-5deg) translateY(20%)'
+      }
+    };
+  }
+
+  if (template.energeticWaves && template.id === 'fieryRed') {
+    styles = {
+      ...styles,
+      backgroundImage: `${styles.backgroundImage}, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='600' y1='25' x2='600' y2='777'%3E%3Cstop offset='0' stop-color='%23f87171' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23f87171' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='650' y1='25' x2='650' y2='777'%3E%3Cstop offset='0' stop-color='%23f87171' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23f87171' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='700' y1='25' x2='700' y2='777'%3E%3Cstop offset='0' stop-color='%23f87171' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23f87171' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='750' y1='25' x2='750' y2='777'%3E%3Cstop offset='0' stop-color='%23f87171' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23f87171' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='800' y1='25' x2='800' y2='777'%3E%3Cstop offset='0' stop-color='%23f87171' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23f87171' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='850' y1='25' x2='850' y2='777'%3E%3Cstop offset='0' stop-color='%23f87171' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23f87171' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='900' y1='25' x2='900' y2='777'%3E%3Cstop offset='0' stop-color='%23f87171' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23f87171' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3ClinearGradient id='h' gradientUnits='userSpaceOnUse' x1='950' y1='25' x2='950' y2='777'%3E%3Cstop offset='0' stop-color='%23f87171' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23f87171' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3ClinearGradient id='i' gradientUnits='userSpaceOnUse' x1='1000' y1='25' x2='1000' y2='777'%3E%3Cstop offset='0' stop-color='%23f87171' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23f87171' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3ClinearGradient id='j' gradientUnits='userSpaceOnUse' x1='1050' y1='25' x2='1050' y2='777'%3E%3Cstop offset='0' stop-color='%23f87171' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23f87171' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3ClinearGradient id='k' gradientUnits='userSpaceOnUse' x1='1100' y1='25' x2='1100' y2='777'%3E%3Cstop offset='0' stop-color='%23f87171' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23f87171' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3ClinearGradient id='l' gradientUnits='userSpaceOnUse' x1='1150' y1='25' x2='1150' y2='777'%3E%3Cstop offset='0' stop-color='%23f87171' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23f87171' stop-opacity='0.1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg %3E%3Cpath fill='url(%23a)' d='M0,0H1200V800H0z'/%3E%3Cpath fill='url(%23b)' d='M100,0H1300V800H100z'/%3E%3Cpath fill='url(%23c)' d='M200,0H1400V800H200z'/%3E%3Cpath fill='url(%23d)' d='M300,0H1500V800H300z'/%3E%3Cpath fill='url(%23e)' d='M400,0H1600V800H400z'/%3E%3Cpath fill='url(%23f)' d='M500,0H1700V800H500z'/%3E%3Cpath fill='url(%23g)' d='M600,0H1800V800H600z'/%3E%3Cpath fill='url(%23h)' d='M700,0H1900V800H700z'/%3E%3Cpath fill='url(%23i)' d='M800,0H2000V800H800z'/%3E%3Cpath fill='url(%23j)' d='M900,0H2100V800H900z'/%3E%3Cpath fill='url(%23k)' d='M1000,0H2200V800H1000z'/%3E%3Cpath fill='url(%23l)' d='M1100,0H2300V800H1100z'/%3E%3C/g%3E%3C/svg%3E")`
+    };
+  }
+
   return styles;
 };
 
@@ -659,7 +809,18 @@ export const applyTemplateTitleStyles = (template) => {
       ...styles,
       textShadow: `0 0 5px ${template.accentColor}, 0 0 10px ${template.accentColor}80, 0 0 15px ${template.accentColor}50`,
       animation: 'neonPulse 2s infinite alternate',
-      letterSpacing: '2px'
+      letterSpacing: '2px',
+      fontWeight: '600',
+      position: 'relative',
+      paddingLeft: '15px',
+      '&::before': {
+        content: '"|"',
+        position: 'absolute',
+        left: '0',
+        top: '0',
+        color: template.accentColor,
+        textShadow: `0 0 5px ${template.accentColor}, 0 0 10px ${template.accentColor}`,
+      }
     };
   }
 
@@ -710,13 +871,27 @@ export const applyTemplateTitleStyles = (template) => {
   if (template.holographicEffect && template.id === 'futuristic') {
     styles = {
       ...styles,
-      background: `linear-gradient(90deg, ${template.accentColor}, #a78bfa, ${template.accentColor})`,
-      backgroundSize: '200% auto',
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-      animation: 'shine 3s linear infinite',
-      textShadow: `0 0 5px ${template.accentColor}30, 0 0 10px ${template.accentColor}20`,
-      letterSpacing: '1px'
+      color: template.accentColor,
+      fontWeight: '700',
+      fontSize: '110%',
+      letterSpacing: '1px',
+      position: 'relative',
+      padding: '4px 8px',
+      background: template.improvedContrast ? 'rgba(0, 0, 0, 0.6)' : 'transparent',
+      borderRadius: '4px',
+      border: `1px solid ${template.accentColor}40`,
+      boxShadow: `0 0 4px ${template.accentColor}50`,
+      textShadow: `0 0 1px ${template.accentColor}, 0 0 2px rgba(0, 0, 0, 0.8)`,
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        left: '0',
+        bottom: '-2px',
+        width: '100%',
+        height: '1px',
+        background: template.accentColor,
+        opacity: '0.5'
+      }
     };
   }
   
@@ -728,6 +903,34 @@ export const applyTemplateTitleStyles = (template) => {
       letterSpacing: '-0.03em',
       textTransform: 'uppercase',
       borderBottom: '4px solid #000'
+    };
+  }
+
+  if (template.id === 'fieryRed' && template.boldAccents) {
+    styles = {
+      ...styles,
+      color: '#dc2626', // 使用更热烈的深红色
+      fontWeight: '800',
+      fontSize: '130%',
+      letterSpacing: '1px',
+      textTransform: 'uppercase',
+      position: 'relative',
+      padding: '5px 15px',
+      textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+      backgroundImage: 'linear-gradient(45deg, #b91c1c, #ef4444)', // 深红色到火红色的渐变
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        bottom: '0',
+        width: '60%',
+        height: '3px',
+        background: 'linear-gradient(90deg, transparent, #dc2626, transparent)', // 使用更热烈的深红色
+        borderRadius: '2px'
+      }
     };
   }
   
@@ -805,7 +1008,7 @@ export const applyTemplateNewsItemStyles = (template) => {
         paddingBottom: '20px',
         padding: '15px',
         borderRadius: '5px',
-        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         boxShadow: `0 0 15px ${template.accentColor}50, 0 0 30px ${template.accentColor}20`,
         backdropFilter: 'blur(5px)',
         borderLeft: `3px solid ${template.accentColor}`,
@@ -823,7 +1026,7 @@ export const applyTemplateNewsItemStyles = (template) => {
           left: '0',
           width: '100%',
           height: '100%',
-          background: `linear-gradient(90deg, ${template.accentColor}05 25%, transparent 25%)`,
+          background: `linear-gradient(90deg, ${template.accentColor}10 25%, transparent 25%)`,
           backgroundSize: '4px 100%',
           zIndex: '-1'
         } : {},
@@ -873,7 +1076,7 @@ export const applyTemplateNewsItemStyles = (template) => {
       };
     case 'card':
       return {
-        backgroundColor: 'rgba(255, 255, 255, 0.15)',
+        backgroundColor: template.contrastEnhanced ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.15)',
         borderRadius: '10px',
         padding: '20px',
         marginBottom: '20px',
@@ -1122,6 +1325,34 @@ export const applyTemplateNewsItemStyles = (template) => {
           zIndex: '0'
         } : {}
       };
+    case 'fiery':
+      return {
+        marginBottom: '20px',
+        paddingBottom: '15px',
+        padding: '15px',
+        borderRadius: '6px',
+        backgroundColor: 'rgba(127, 29, 29, 0.1)', // 更深的红色背景
+        border: '1px solid rgba(220, 38, 38, 0.3)', // 更热烈的红色边框
+        boxShadow: '0 5px 15px rgba(239, 68, 68, 0.2)',
+        position: 'relative',
+        overflow: 'hidden',
+        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+        '&:hover': {
+          transform: 'translateY(-4px)',
+          boxShadow: '0 8px 20px rgba(220, 38, 38, 0.3)', // 更红的阴影
+          border: '1px solid rgba(220, 38, 38, 0.5)'
+        },
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          top: '0',
+          right: '0',
+          width: '40%',
+          height: '4px',
+          background: 'linear-gradient(to left, #b91c1c, transparent)', // 热烈的红色渐变
+          borderRadius: '0 6px 0 0'
+        }
+      };
     default:
       return {
         marginBottom: '20px',
@@ -1283,13 +1514,16 @@ export const applyTemplateNewsTitleStyles = (template) => {
   if (template.holographicEffect && template.id === 'futuristic') {
     styles = {
       ...styles,
-      background: `linear-gradient(90deg, ${template.accentColor}, #a78bfa, ${template.accentColor})`,
-      backgroundSize: '200% auto',
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-      animation: 'shine 3s linear infinite',
-      textShadow: `0 0 5px ${template.accentColor}30, 0 0 10px ${template.accentColor}20`,
-      letterSpacing: '1px'
+      color: template.accentColor,
+      fontWeight: '700',
+      letterSpacing: '0.5px',
+      position: 'relative',
+      padding: '2px 4px',
+      background: template.improvedContrast ? 'rgba(0, 0, 0, 0.6)' : 'transparent',
+      borderRadius: '2px',
+      border: `1px solid ${template.accentColor}30`,
+      boxShadow: `0 0 3px ${template.accentColor}40`,
+      textShadow: `0 0 1px ${template.accentColor}, 0 0 2px rgba(0, 0, 0, 0.8)`
     };
   }
   
@@ -1315,6 +1549,30 @@ export const applyTemplateNewsTitleStyles = (template) => {
     };
   }
 
+  if (template.id === 'fieryRed' && template.highContrast) {
+    styles = {
+      ...styles,
+      color: '#dc2626', // 更热烈的红色
+      fontWeight: '700',
+      fontSize: '110%',
+      letterSpacing: '0.5px',
+      position: 'relative',
+      paddingLeft: '10px',
+      paddingBottom: '5px',
+      textShadow: '0 1px 3px rgba(0,0,0,0.3)',
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        left: '0',
+        top: '0',
+        width: '3px',
+        height: '100%',
+        background: '#dc2626', // 更热烈的红色
+        borderRadius: '2px'
+      }
+    };
+  }
+
   return styles;
 };
 
@@ -1332,7 +1590,21 @@ export const applyTemplateNewsContentStyles = (template) => {
     styles = {
       ...styles,
       color: `${template.textColor}`,
-      lineHeight: '1.6'
+      lineHeight: '1.6',
+      '& strong': {
+        color: template.accentColor,
+        textShadow: `0 0 3px ${template.accentColor}50`
+      },
+      '& a': {
+        color: template.accentColor,
+        textDecoration: 'none',
+        borderBottom: `1px dashed ${template.accentColor}`,
+        transition: 'all 0.3s ease',
+        '&:hover': {
+          textShadow: `0 0 5px ${template.accentColor}`,
+          borderBottom: `1px solid ${template.accentColor}`
+        }
+      }
     };
   }
 
@@ -1411,6 +1683,62 @@ export const applyTemplateNewsContentStyles = (template) => {
         fontWeight: '900',
         background: 'rgba(0,0,0,0.05)',
         padding: '0 4px'
+      }
+    };
+  }
+
+  if (template.id === 'vibrant') {
+    styles = {
+      ...styles,
+      fontSize: '14px',
+      letterSpacing: '0.3px',
+      lineHeight: '1.7',
+      textShadow: template.textShadow ? '0 1px 2px rgba(0, 0, 0, 0.5)' : 'none',
+      '& strong': {
+        color: template.accentColor,
+        fontWeight: '700'
+      },
+      '& a': {
+        color: template.accentColor,
+        position: 'relative',
+        textDecoration: 'none',
+        fontWeight: '600',
+        '&:hover': {
+          textShadow: `0 0 3px ${template.accentColor}80`
+        },
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          left: '0',
+          bottom: '-1px',
+          width: '100%',
+          height: '1px',
+          background: template.accentColor
+        }
+      }
+    };
+  }
+
+  if (template.id === 'fieryRed') {
+    styles = {
+      ...styles,
+      color: template.textColor,
+      fontSize: '14px',
+      letterSpacing: '0.3px',
+      lineHeight: '1.6',
+      '& strong': {
+        color: '#dc2626', // 更热烈的红色
+        fontWeight: '700',
+        textShadow: '0 1px 2px rgba(0,0,0,0.2)'
+      },
+      '& a': {
+        color: '#dc2626', // 更热烈的红色
+        textDecoration: 'none',
+        borderBottom: '1px dashed #dc2626', // 更热烈的红色
+        '&:hover': {
+          textShadow: '0 0 3px rgba(220, 38, 38, 0.6)', // 更热烈的红色阴影
+          borderBottom: '1px solid #dc2626' // 更热烈的红色
+        }
       }
     };
   }
