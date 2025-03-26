@@ -268,6 +268,9 @@ const PosterGenerator = () => {
             // 特别增强所有文本元素的可见度
             const allTextElements = element.querySelectorAll('.poster-title, .news-title, .news-content');
             
+            // 获取所有新闻项目元素，确保在使用它之前定义
+            const newsItems = element.querySelectorAll('.news-item');
+            
             // 根据模板类型应用不同的文本样式
             if (currentTemplate && currentTemplate.id === 'dark') {
               // 暗黑科技模板使用绿色文字
@@ -374,7 +377,6 @@ const PosterGenerator = () => {
             }
             
             // 特别处理新闻项目在黑色背景上的显示
-            const newsItems = element.querySelectorAll('.news-item');
             if (currentTemplate && currentTemplate.id === 'dark') {
               // 暗黑科技模板使用绿色边框和阴影
               newsItems.forEach(item => {
